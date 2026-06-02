@@ -419,6 +419,8 @@
 .garden__image {
   max-width: 640px;
   width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   border-radius: 4px;
   margin-bottom: var(--space-3xl);
   box-shadow:

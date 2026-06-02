@@ -63,6 +63,9 @@
 
   /* ---- Init ---- */
   document.addEventListener('DOMContentLoaded', () => {
+    /* Activate deferred stylesheets */
+    document.getElementById('css-animations')?.setAttribute('media', 'all');
+
     initReducedMotion();
     Router.init();
     Navigation.init();
