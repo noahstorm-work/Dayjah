@@ -39,10 +39,12 @@ assets/images/     — sorted into room subfolders
 - For local dev: `npx serve .` or Python `http.server` for clean routing.
 
 ## Visual system
-- **Palette:** warm off-black (`#1A1817`), deep charcoal (`#2A2825`), bone (`#F5F0E8`), aged cream (`#E8E0D6`), amber/gold (`#C4A265`), rain-dark blue (`#2A3038`), moss/olive (`#7A8B6F`), earth tones, stone, weathered wood. No purple.
-- **Textures:** rain glass, paper grain, stone, clay, brushed metal, old walls, soft shadow.
+- **Palette:** warm off-black (`#1A1817`), deep charcoal (`#2A2825`), rain-dark blue (`#1E2428`), bone (`#E8E0D6`), aged cream (`#C9BFA8`), amber/gold (`#C4A265`), oxidised bronze (`#8B7D5E`), moss/olive (`#5A6B4F`), weathered wood (`#6B5B4E`), clay (`#A6745C`), stone (`#8A847A`). No purple.
+- **Atmosphere:** dark warm backgrounds with spotlight effects, radial gold glow on entrance, paper grain overlay, warm shadows.
+- **Textures:** rain glass (blur), paper grain (SVG noise), stone, clay, brushed metal, soft shadow, warm low-light.
 - **Typography:** Cormorant Garamond (display), DM Sans (body) — Google Fonts.
-- **Motion:** slow entrance reveal, gentle room transitions (fade+scale), gallery opens like discovered object. No spinning 3D, no particles, no loud effects.
+- **Motion:** slow entrance reveal, gentle room transitions (fade+scale), gallery opens like discovered object with warm spotlight. No spinning 3D, no particles, no loud effects.
+- **Tagline:** "Every day belongs to truth." — appears in entrance sequence.
 - **Reduced motion:** detect `prefers-reduced-motion`, all animations become instant opacity fades.
 
 ## Accessibility rules
