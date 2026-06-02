@@ -6,7 +6,7 @@ Dayjah is not a portfolio. Not a gallery template. Not a corporate art site.
 
 Dayjah is a song. The mediums are instruments. The website is a place — a strange, warm, elegant destination where visitors wander through rooms, look at work, and feel something.
 
-Core idea: A stylish Art Shop for adults. A place where grown-ups are allowed to wonder again.
+Core idea: A stylish art shop for adults. A place where grown-ups are allowed to wonder again.
 
 ## Emotional goal
 
