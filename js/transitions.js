@@ -1,43 +1,22 @@
 const Transitions = {
   switchRoom(fromId, toId) {
+    if (Store.get('isTransitioning')) return;
     Store.set('isTransitioning', true);
 
     const from = document.querySelector(`[data-room="${fromId}"]`);
     const to = document.querySelector(`[data-room="${toId}"]`);
-
     if (!from || !to) {
       Store.set('isTransitioning', false);
       return;
     }
 
-    const reducedMotion = ReducedMotion.prefersReduced;
-
-    if (reducedMotion) {
-      from.classList.remove('active');
-      to.classList.add('active');
-      this.afterTransition(fromId, toId);
-      return;
-    }
-
     from.classList.remove('active');
-
-    const onTransitionEnd = () => {
-      from.removeEventListener('transitionend', onTransitionEnd);
-      to.classList.add('active');
-      setTimeout(() => {
-        this.afterTransition(fromId, toId);
-      }, 100);
-    };
-
-    from.addEventListener('transitionend', onTransitionEnd);
+    const duration = ReducedMotion.prefersReduced ? 0 : 600;
 
     setTimeout(() => {
-      if (from.classList.contains('active')) {
-        from.removeEventListener('transitionend', onTransitionEnd);
-        to.classList.add('active');
-        setTimeout(() => this.afterTransition(fromId, toId), 100);
-      }
-    }, 800);
+      to.classList.add('active');
+      this.afterTransition(fromId, toId);
+    }, duration + 50);
   },
 
   afterTransition(fromId, toId) {
@@ -50,14 +29,14 @@ const Transitions = {
   getRoomBg(roomId) {
     const map = {
       entrance: 'var(--c-dusk)',
-      rooms: 'var(--c-bone)',
-      gallery: 'var(--c-warm-white)',
-      garden: 'var(--c-warm-white)',
+      rooms: 'var(--c-body)',
+      gallery: 'var(--c-body)',
+      garden: 'var(--c-dusk)',
       objects: 'var(--c-charcoal)',
-      about: 'var(--c-bone)',
-      contact: 'var(--c-bone)'
+      about: 'var(--c-body)',
+      contact: 'var(--c-body)'
     };
-    return map[roomId] || 'var(--c-bone)';
+    return map[roomId] || 'var(--c-body)';
   },
 
   manageFocus(roomId) {

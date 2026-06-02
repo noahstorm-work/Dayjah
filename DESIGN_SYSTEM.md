@@ -4,21 +4,21 @@
 
 | Token | Value | Usage |
 |---|---|---|
-| `--c-dusk` | `#1A1817` | Warm off-black — dark backgrounds, entrance |
-| `--c-charcoal` | `#2A2825` | Deep charcoal — body text, dark sections |
-| `--c-slate` | `#4A4A48` | Muted slate — secondary text, borders |
-| `--c-bone` | `#F5F0E8` | Bone — main page background |
-| `--c-cream` | `#E8E0D6` | Aged cream — secondary backgrounds |
-| `--c-linen` | `#DDD5CA` | Linen — subtle borders, dividers |
-| `--c-gold` | `#C4A265` | Soft amber/gold — accents, highlights |
+| `--c-dusk` | `#1A1817` | Warm off-black — main backgrounds, entrance |
+| `--c-charcoal` | `#2A2825` | Deep charcoal — dark surfaces |
+| `--c-night` | `#1E2428` | Rain-dark blue/black — atmospheric depth |
+| `--c-cream` | `#C9BFA8` | Aged cream — body text, secondary text |
+| `--c-gold` | `#C4A265` | Soft amber/gold — primary accent, highlights |
 | `--c-gold-light` | `#D4BC8A` | Lighter gold — hover states |
-| `--c-clay` | `#C67A5A` | Earth/clay — secondary accents |
-| `--c-blush` | `#D9B8A4` | Soft warmth — hover backgrounds |
-| `--c-rain` | `#2A3038` | Rain-dark blue — depth accents |
-| `--c-moss` | `#7A8B6F` | Moss/olive — nature accents (Garden) |
-| `--c-stone` | `#9A938A` | Stone — muted text, icons |
-| `--c-steel` | `#8A8782` | Brushed steel — subtle metallic |
-| `--c-warm-white` | `#FAF7F2` | Warm white — card backgrounds |
+| `--c-bronze` | `#8B7D5E` | Oxidised bronze — subtle accent |
+| `--c-moss` | `#5A6B4F` | Moss/olive — garden accent |
+| `--c-stone` | `#8A847A` | Stone grey — muted text, icons |
+| `--c-text` | `#D4CEC4` | Warm light grey — body text on dark |
+| `--c-text-head` | `#EDE8DF` | Heading text on dark backgrounds |
+| `--c-surface` | `#2A2724` | Dark surface — cards, panels |
+| `--c-surface-lt` | `#35312E` | Lighter dark surface |
+| `--c-border` | `#3A3632` | Dark border |
+| `--c-body` | `#1E1C1A` | Page body background |
 
 **No purple.** Not even in shadows.
 
@@ -32,7 +32,7 @@
 
 **Scale:** 0.75rem → 0.875rem → 1rem → 1.125rem → 1.5rem → 2rem → 3rem → 4.5rem → 6rem
 
-**Google Fonts:** Both fonts loaded from Google Fonts via `@import` in `base.css`.
+**Google Fonts:** Both fonts loaded from Google Fonts via `<link>` in `index.html` (not `@import` in CSS — avoids CSP issues).
 
 **Self-hosting:** For production, download and self-host both fonts under `assets/fonts/` to eliminate external requests.
 

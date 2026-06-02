@@ -45,32 +45,7 @@
         <h2 class="rooms-header__title">The Rooms</h2>
         <p class="rooms-header__desc">A place for work that would not stay in one shape. The medium changes. The mission does not.</p>
       </header>
-      <div class="rooms-grid" role="list">
-        <button class="room-card" data-room-target="gallery" role="listitem" aria-label="Enter The Gallery">
-          <span class="room-card__icon" aria-hidden="true">∿</span>
-          <span class="room-card__name">The Gallery</span>
-          <span class="room-card__desc">One piece at a time. Space to look closely.</span>
-          <span class="room-card__arrow" aria-hidden="true">→</span>
-        </button>
-        <button class="room-card" data-room-target="garden" role="listitem" aria-label="Enter The Garden">
-          <span class="room-card__icon" aria-hidden="true">⌒</span>
-          <span class="room-card__name">The Garden</span>
-          <span class="room-card__desc">Outside. Breathing. Words and stillness.</span>
-          <span class="room-card__arrow" aria-hidden="true">→</span>
-        </button>
-        <button class="room-card" data-room-target="objects" role="listitem" aria-label="Enter Objects">
-          <span class="room-card__icon" aria-hidden="true">◇</span>
-          <span class="room-card__name">Objects</span>
-          <span class="room-card__desc">Curiosities, clothing, things made and found.</span>
-          <span class="room-card__arrow" aria-hidden="true">→</span>
-        </button>
-        <button class="room-card" data-room-target="about" role="listitem" aria-label="About Dayjah">
-          <span class="room-card__icon" aria-hidden="true">○</span>
-          <span class="room-card__name">About</span>
-          <span class="room-card__desc">The maker, the mission, the why.</span>
-          <span class="room-card__arrow" aria-hidden="true">→</span>
-        </button>
-      </div>
+      <div class="rooms-grid" role="list" id="rooms-grid"></div>
     </div>
   </section>
 
@@ -81,74 +56,7 @@
         <h2 class="gallery-header__title">The Gallery</h2>
         <p class="gallery-header__desc">Art that would not stay in one frame. Click any piece to look closer.</p>
       </header>
-      <div class="gallery-grid" role="list">
-        <div class="gallery-item" role="listitem" tabindex="0"
-             data-title="Horizon Study"
-             data-meta="Digital pigment on canvas, 2026"
-             data-src="assets/images/long-gallery/horizon-study.svg"
-             aria-label="Horizon Study — Digital pigment on canvas, 2026">
-          <img src="assets/images/long-gallery/horizon-study.svg" alt="Horizon Study — Abstract landscape with warm earth tones and atmospheric light" class="gallery-item__image" loading="lazy">
-          <div class="gallery-item__info">
-            <span class="gallery-item__title">Horizon Study</span>
-            <span class="gallery-item__meta">Digital pigment on canvas, 2026</span>
-          </div>
-        </div>
-        <div class="gallery-item" role="listitem" tabindex="0"
-             data-title="Field of Form"
-             data-meta="Mixed media on paper, 2025"
-             data-src="assets/images/long-gallery/field-of-form.svg"
-             aria-label="Field of Form — Mixed media on paper, 2025">
-          <img src="assets/images/long-gallery/field-of-form.svg" alt="Field of Form — Abstract organic composition in earth and moss tones" class="gallery-item__image" loading="lazy">
-          <div class="gallery-item__info">
-            <span class="gallery-item__title">Field of Form</span>
-            <span class="gallery-item__meta">Mixed media on paper, 2025</span>
-          </div>
-        </div>
-        <div class="gallery-item" role="listitem" tabindex="0"
-             data-title="Face Study"
-             data-meta="Ink on paper, 2025"
-             data-src="assets/images/drawing-room/face-study.svg"
-             aria-label="Face Study — Ink on paper, 2025">
-          <img src="assets/images/drawing-room/face-study.svg" alt="Face Study — Continuous line portrait in warm charcoal" class="gallery-item__image" loading="lazy">
-          <div class="gallery-item__info">
-            <span class="gallery-item__title">Face Study</span>
-            <span class="gallery-item__meta">Ink on paper, 2025</span>
-          </div>
-        </div>
-        <div class="gallery-item" role="listitem" tabindex="0"
-             data-title="Line Form"
-             data-meta="Charcoal on paper, 2025"
-             data-src="assets/images/drawing-room/line-form.svg"
-             aria-label="Line Form — Charcoal on paper, 2025">
-          <img src="assets/images/drawing-room/line-form.svg" alt="Line Form — Abstract flowing line composition in warm tones" class="gallery-item__image" loading="lazy">
-          <div class="gallery-item__info">
-            <span class="gallery-item__title">Line Form</span>
-            <span class="gallery-item__meta">Charcoal on paper, 2025</span>
-          </div>
-        </div>
-        <div class="gallery-item" role="listitem" tabindex="0"
-             data-title="Botanical Study"
-             data-meta="Graphite on paper, 2025"
-             data-src="assets/images/cabinet/botanical-study.svg"
-             aria-label="Botanical Study — Graphite on paper, 2025">
-          <img src="assets/images/cabinet/botanical-study.svg" alt="Botanical Study — Delicate botanical line study in warm earth tones" class="gallery-item__image" loading="lazy">
-          <div class="gallery-item__info">
-            <span class="gallery-item__title">Botanical Study</span>
-            <span class="gallery-item__meta">Graphite on paper, 2025</span>
-          </div>
-        </div>
-        <div class="gallery-item" role="listitem" tabindex="0"
-             data-title="Geometric Study"
-             data-meta="Ink and pigment on paper, 2026"
-             data-src="assets/images/cabinet/geometric-study.svg"
-             aria-label="Geometric Study — Ink and pigment on paper, 2026">
-          <img src="assets/images/cabinet/geometric-study.svg" alt="Geometric Study — Abstract geometric composition in warm clay and charcoal" class="gallery-item__image" loading="lazy">
-          <div class="gallery-item__info">
-            <span class="gallery-item__title">Geometric Study</span>
-            <span class="gallery-item__meta">Ink and pigment on paper, 2026</span>
-          </div>
-        </div>
-      </div>
+      <div class="gallery-grid" role="list" id="gallery-grid"></div>
     </div>
   </section>
 
@@ -224,10 +132,10 @@
   <!-- ============ GALLERY OVERLAY ============ -->
   <div class="gallery-overlay" id="gallery-overlay" role="dialog" aria-modal="true" aria-label="Artwork detail">
     <div class="gallery-overlay__content">
-      <img src="" alt="" class="gallery-overlay__image" id="gallery-overlay-image">
+      <img src="" alt="" class="gallery-overlay__image">
       <div class="gallery-overlay__caption">
-        <p class="gallery-overlay__title" id="gallery-overlay-title"></p>
-        <p class="gallery-overlay__meta" id="gallery-overlay-meta"></p>
+        <p class="gallery-overlay__title"></p>
+        <p class="gallery-overlay__meta"></p>
       </div>
     </div>
     <button class="gallery-overlay__close" aria-label="Close artwork view">&times;</button>

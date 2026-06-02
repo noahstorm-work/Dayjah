@@ -346,6 +346,22 @@
   transform: scale(1.05);
 }
 
+.gallery-item--broken {
+  background: var(--c-surface-lt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.gallery-item--broken::after {
+  content: 'Image unavailable';
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  color: var(--c-stone);
+  letter-spacing: 0.05em;
+}
+
 .gallery-item__info {
   position: absolute;
   bottom: 0;
