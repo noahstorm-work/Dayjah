@@ -173,7 +173,7 @@
       <div class="objects__shelf" aria-hidden="true"></div>
       <h2 class="objects__title">Objects</h2>
       <p class="objects__desc">The shop is not open yet. But it will be. Objects, clothing, prints, and curiosities — made slowly, released quietly.</p>
-      <form class="objects__form" aria-label="Notify me when the shop opens" onsubmit="event.preventDefault(); alert('Thank you. We will let you know when the first pieces arrive.');">
+      <form class="objects__form" aria-label="Notify me when the shop opens">
         <label for="objects-email" class="sr-only">Your email</label>
         <input type="email" id="objects-email" placeholder="Your email" aria-required="true">
         <button type="submit" class="btn">Notify me</button>
@@ -199,7 +199,7 @@
     <div class="room__inner">
       <h2 class="contact__title">Contact</h2>
       <p class="contact__desc">For collectors, collaborations, or just to say hello — I would like that.</p>
-      <form class="contact__form" aria-label="Contact form" onsubmit="event.preventDefault(); alert('Thank you. Your message has been received.');">
+      <form class="contact__form" aria-label="Contact form">
         <div class="form-group">
           <label for="contact-name">Name</label>
           <input type="text" id="contact-name" name="name" aria-required="true">
@@ -214,7 +214,7 @@
         </div>
         <button type="submit" class="btn btn--outline">Send</button>
       </form>
-      <p style="margin-top: var(--space-2xl);">
+      <p class="contact__email-wrapper">
         <a href="mailto:hello@dayjah.co.uk" class="contact__email-link">hello@dayjah.co.uk</a>
       </p>
     </div>
