@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <title>The View — Garden Landscape</title>
+  <desc>Atmospheric garden view with horizon, trees, and soft light</desc>
+  <rect width="800" height="600" fill="#FAF7F2"/>
+  <rect x="0" y="380" width="800" height="220" fill="#E8E0D6" opacity="0.5"/>
+  <line x1="0" y1="380" x2="800" y2="380" stroke="#2A2825" stroke-width="0.4" opacity="0.1"/>
+  <ellipse cx="400" cy="250" rx="300" ry="120" fill="#C4A265" opacity="0.04"/>
+  <ellipse cx="400" cy="240" rx="200" ry="80" fill="#C4A265" opacity="0.06"/>
+  <path d="M120 380 C130 300 150 250 180 230 C210 210 220 200 230 220"
+        stroke="#2A2825" stroke-width="0.8" fill="none" opacity="0.2"/>
+  <path d="M180 230 C190 180 200 150 220 140 C240 130 250 140 255 160"
+        stroke="#2A2825" stroke-width="0.6" fill="none" opacity="0.15"/>
+  <path d="M220 140 C240 110 260 90 280 100 C300 110 300 130 290 150"
+        stroke="#2A2825" stroke-width="0.5" fill="none" opacity="0.12"/>
+  <circle cx="280" cy="140" r="25" fill="#7A8B6F" opacity="0.08"/>
+  <circle cx="260" cy="160" r="20" fill="#7A8B6F" opacity="0.06"/>
+  <path d="M500 380 C510 320 520 280 540 260 C560 240 570 250 575 270"
+        stroke="#2A2825" stroke-width="0.7" fill="none" opacity="0.18"/>
+  <path d="M540 260 C550 220 560 200 580 190 C600 180 610 195 605 215"
+        stroke="#2A2825" stroke-width="0.5" fill="none" opacity="0.12"/>
+  <circle cx="580" cy="200" r="20" fill="#7A8B6F" opacity="0.07"/>
+  <circle cx="555" cy="220" r="15" fill="#7A8B6F" opacity="0.05"/>
+  <path d="M650 380 C655 340 660 310 670 300 C680 290 685 300 682 315"
+        stroke="#2A2825" stroke-width="0.4" fill="none" opacity="0.1"/>
+  <path d="M0 500 C100 480 200 490 300 485 C400 480 500 495 600 488 C700 480 750 485 800 482"
+        stroke="#2A2825" stroke-width="0.3" fill="none" opacity="0.08"/>
+  <circle cx="680" cy="200" r="2" fill="#C4A265" opacity="0.3"/>
+  <circle cx="695" cy="215" r="1.5" fill="#C4A265" opacity="0.2"/>
+  <circle cx="350" cy="380" r="3" fill="#7A8B6F" opacity="0.15"/>
+  <circle cx="360" cy="375" r="2" fill="#7A8B6F" opacity="0.1"/>
+  <path d="M0 380 C50 370 80 375 120 380"
+        stroke="#7A8B6F" stroke-width="0.5" fill="none" opacity="0.15"/>
+  <path d="M680 380 C720 370 750 375 800 380"
+        stroke="#7A8B6F" stroke-width="0.5" fill="none" opacity="0.12"/>
+  <rect x="0" y="560" width="800" height="40" fill="#2A2825" opacity="0.02"/>
+</svg>

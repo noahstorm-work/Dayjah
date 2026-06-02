@@ -1,0 +1,75 @@
+:root {
+  /* ---- Colour Palette ---- */
+  --c-dusk:       #1A1817;
+  --c-charcoal:   #2A2825;
+  --c-slate:      #4A4A48;
+  --c-bone:       #F5F0E8;
+  --c-cream:      #E8E0D6;
+  --c-linen:      #DDD5CA;
+  --c-gold:       #C4A265;
+  --c-gold-light: #D4BC8A;
+  --c-clay:       #C67A5A;
+  --c-blush:      #D9B8A4;
+  --c-rain:       #2A3038;
+  --c-moss:       #7A8B6F;
+  --c-stone:      #9A938A;
+  --c-steel:      #8A8782;
+  --c-warm-white: #FAF7F2;
+
+  /* ---- Typography ---- */
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:    'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --fs-xs:   0.75rem;
+  --fs-sm:   0.875rem;
+  --fs-base: 1rem;
+  --fs-md:   1.125rem;
+  --fs-lg:   1.5rem;
+  --fs-xl:   2rem;
+  --fs-2xl:  3rem;
+  --fs-3xl:  4.5rem;
+  --fs-4xl:  6rem;
+
+  --lh-tight: 1.1;
+  --lh-body:  1.6;
+  --lh-loose: 2;
+
+  --fw-light:   300;
+  --fw-regular: 400;
+  --fw-medium:  500;
+
+  /* ---- Spacing ---- */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+  --space-6xl: 12rem;
+
+  /* ---- Layout ---- */
+  --content-max: 960px;
+  --content-narrow: 640px;
+  --pad-desktop: 6rem;
+  --pad-tablet: 3rem;
+  --pad-mobile: 1.5rem;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 300ms;
+  --dur-med: 600ms;
+  --dur-slow: 1000ms;
+  --dur-enter: 2000ms;
+
+  /* ---- Z-index layers ---- */
+  --z-base: 1;
+  --z-room: 10;
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+}

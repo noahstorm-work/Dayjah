@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <title>Horizon Study — Landscape Abstraction</title>
+  <desc>Abstract landscape with horizon line, warm earth and atmosphere</desc>
+  <rect width="800" height="600" fill="#F5F0E8"/>
+  <rect x="0" y="340" width="800" height="260" fill="#E8E0D6" opacity="0.6"/>
+  <rect x="0" y="400" width="800" height="200" fill="#DDD5CA" opacity="0.4"/>
+  <line x1="0" y1="340" x2="800" y2="340" stroke="#2A2825" stroke-width="0.6" opacity="0.15"/>
+  <path d="M0 340 C100 320 200 330 300 315 C400 300 500 325 600 310 C700 295 750 305 800 300"
+        stroke="#C67A5A" stroke-width="1.2" fill="none" opacity="0.4"/>
+  <path d="M0 360 C150 350 250 370 400 355 C550 340 650 360 800 350"
+        stroke="#7A8B6F" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <ellipse cx="600" cy="180" rx="120" ry="60" fill="#C4A265" opacity="0.06"/>
+  <ellipse cx="600" cy="180" rx="80" ry="35" fill="#C4A265" opacity="0.08"/>
+  <path d="M200 340 C220 300 250 280 280 290"
+        stroke="#2A2825" stroke-width="0.5" fill="none" opacity="0.15"/>
+  <path d="M500 340 C520 310 540 295 560 300"
+        stroke="#2A2825" stroke-width="0.5" fill="none" opacity="0.12"/>
+  <path d="M0 490 C100 480 200 500 300 490 C400 480 500 495 600 485 C700 475 750 480 800 478"
+        stroke="#2A2825" stroke-width="0.3" fill="none" opacity="0.08"/>
+  <rect x="0" y="560" width="800" height="40" fill="#2A2825" opacity="0.03"/>
+  <circle cx="680" cy="120" r="2" fill="#C4A265" opacity="0.3"/>
+  <circle cx="700" cy="135" r="1.5" fill="#C4A265" opacity="0.2"/>
+</svg>

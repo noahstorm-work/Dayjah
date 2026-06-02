@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dayjah</title>
+  <meta name="description" content="A place for work that would not stay in one shape. Rooms for wonder, shelter, fracture, play, and return.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40pt,300;0,9..40pt,400;0,9..40pt,500;1,9..40pt,300;1,9..40pt,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/rooms.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1817' rx='4'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-size='16' font-style='italic' fill='%23C4A265'%3ED%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+</head>
+<body>
+
+  <div class="texture-overlay" aria-hidden="true"></div>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ============ ENTRANCE ============ -->
+  <main id="main">
+  <section id="room-entrance" data-room="entrance" class="room room--entrance active" aria-label="Entrance">
+    <div class="room__inner">
+      <h1 class="entrance__wordmark" aria-label="Dayjah">Dayjah</h1>
+      <p class="entrance__line">Come in. Sit down. You are welcome here.</p>
+      <p class="entrance__sub">A place for things that belong to truth.</p>
+      <button class="entrance__invitation" aria-label="Enter Dayjah">
+        <span>Enter</span>
+        <span class="entrance__invitation-arrow" aria-hidden="true">→</span>
+      </button>
+      <div class="entrance__sofa" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- ============ ROOMS HUB ============ -->
+  <section id="room-rooms" data-room="rooms" class="room room--rooms" aria-label="Rooms">
+    <div class="room__inner">
+      <header class="rooms-header">
+        <h2 class="rooms-header__title">The Rooms</h2>
+        <p class="rooms-header__desc">A place for work that would not stay in one shape. The medium changes. The mission does not.</p>
+      </header>
+      <div class="rooms-grid" role="list">
+        <button class="room-card" data-room-target="gallery" role="listitem" aria-label="Enter The Gallery">
+          <span class="room-card__icon" aria-hidden="true">∿</span>
+          <span class="room-card__name">The Gallery</span>
+          <span class="room-card__desc">One piece at a time. Space to look closely.</span>
+          <span class="room-card__arrow" aria-hidden="true">→</span>
+        </button>
+        <button class="room-card" data-room-target="garden" role="listitem" aria-label="Enter The Garden">
+          <span class="room-card__icon" aria-hidden="true">⌒</span>
+          <span class="room-card__name">The Garden</span>
+          <span class="room-card__desc">Outside. Breathing. Words and stillness.</span>
+          <span class="room-card__arrow" aria-hidden="true">→</span>
+        </button>
+        <button class="room-card" data-room-target="objects" role="listitem" aria-label="Enter Objects">
+          <span class="room-card__icon" aria-hidden="true">◇</span>
+          <span class="room-card__name">Objects</span>
+          <span class="room-card__desc">Curiosities, clothing, things made and found.</span>
+          <span class="room-card__arrow" aria-hidden="true">→</span>
+        </button>
+        <button class="room-card" data-room-target="about" role="listitem" aria-label="About Dayjah">
+          <span class="room-card__icon" aria-hidden="true">○</span>
+          <span class="room-card__name">About</span>
+          <span class="room-card__desc">The maker, the mission, the why.</span>
+          <span class="room-card__arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section id="room-gallery" data-room="gallery" class="room room--gallery" aria-label="Gallery">
+    <div class="room__inner">
+      <header class="gallery-header">
+        <h2 class="gallery-header__title">The Gallery</h2>
+        <p class="gallery-header__desc">Art that would not stay in one frame. Click any piece to look closer.</p>
+      </header>
+      <div class="gallery-grid" role="list">
+        <div class="gallery-item" role="listitem" tabindex="0"
+             data-title="Horizon Study"
+             data-meta="Digital pigment on canvas, 2026"
+             data-src="assets/images/long-gallery/horizon-study.svg"
+             aria-label="Horizon Study — Digital pigment on canvas, 2026">
+          <img src="assets/images/long-gallery/horizon-study.svg" alt="Horizon Study — Abstract landscape with warm earth tones and atmospheric light" class="gallery-item__image" loading="lazy">
+          <div class="gallery-item__info">
+            <span class="gallery-item__title">Horizon Study</span>
+            <span class="gallery-item__meta">Digital pigment on canvas, 2026</span>
+          </div>
+        </div>
+        <div class="gallery-item" role="listitem" tabindex="0"
+             data-title="Field of Form"
+             data-meta="Mixed media on paper, 2025"
+             data-src="assets/images/long-gallery/field-of-form.svg"
+             aria-label="Field of Form — Mixed media on paper, 2025">
+          <img src="assets/images/long-gallery/field-of-form.svg" alt="Field of Form — Abstract organic composition in earth and moss tones" class="gallery-item__image" loading="lazy">
+          <div class="gallery-item__info">
+            <span class="gallery-item__title">Field of Form</span>
+            <span class="gallery-item__meta">Mixed media on paper, 2025</span>
+          </div>
+        </div>
+        <div class="gallery-item" role="listitem" tabindex="0"
+             data-title="Face Study"
+             data-meta="Ink on paper, 2025"
+             data-src="assets/images/drawing-room/face-study.svg"
+             aria-label="Face Study — Ink on paper, 2025">
+          <img src="assets/images/drawing-room/face-study.svg" alt="Face Study — Continuous line portrait in warm charcoal" class="gallery-item__image" loading="lazy">
+          <div class="gallery-item__info">
+            <span class="gallery-item__title">Face Study</span>
+            <span class="gallery-item__meta">Ink on paper, 2025</span>
+          </div>
+        </div>
+        <div class="gallery-item" role="listitem" tabindex="0"
+             data-title="Line Form"
+             data-meta="Charcoal on paper, 2025"
+             data-src="assets/images/drawing-room/line-form.svg"
+             aria-label="Line Form — Charcoal on paper, 2025">
+          <img src="assets/images/drawing-room/line-form.svg" alt="Line Form — Abstract flowing line composition in warm tones" class="gallery-item__image" loading="lazy">
+          <div class="gallery-item__info">
+            <span class="gallery-item__title">Line Form</span>
+            <span class="gallery-item__meta">Charcoal on paper, 2025</span>
+          </div>
+        </div>
+        <div class="gallery-item" role="listitem" tabindex="0"
+             data-title="Botanical Study"
+             data-meta="Graphite on paper, 2025"
+             data-src="assets/images/cabinet/botanical-study.svg"
+             aria-label="Botanical Study — Graphite on paper, 2025">
+          <img src="assets/images/cabinet/botanical-study.svg" alt="Botanical Study — Delicate botanical line study in warm earth tones" class="gallery-item__image" loading="lazy">
+          <div class="gallery-item__info">
+            <span class="gallery-item__title">Botanical Study</span>
+            <span class="gallery-item__meta">Graphite on paper, 2025</span>
+          </div>
+        </div>
+        <div class="gallery-item" role="listitem" tabindex="0"
+             data-title="Geometric Study"
+             data-meta="Ink and pigment on paper, 2026"
+             data-src="assets/images/cabinet/geometric-study.svg"
+             aria-label="Geometric Study — Ink and pigment on paper, 2026">
+          <img src="assets/images/cabinet/geometric-study.svg" alt="Geometric Study — Abstract geometric composition in warm clay and charcoal" class="gallery-item__image" loading="lazy">
+          <div class="gallery-item__info">
+            <span class="gallery-item__title">Geometric Study</span>
+            <span class="gallery-item__meta">Ink and pigment on paper, 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GARDEN ============ -->
+  <section id="room-garden" data-room="garden" class="room room--garden" aria-label="Garden">
+    <div class="room__inner">
+      <img src="assets/images/garden/the-view.svg" alt="Atmospheric garden view with horizon and trees in soft light" class="garden__image" loading="lazy">
+      <div class="garden__text">
+        <h2 class="garden__text-title">A garden is a slow thing.</h2>
+        <div class="garden__text-body">
+          <p>It does not rush. It does not perform. It grows in its own time, in directions you did not plan.</p>
+          <p>Some things belong outside the frame. Let them breathe. Let them find their own shape.</p>
+          <p>— Dayjah</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OBJECTS / FUTURE SHOP ============ -->
+  <section id="room-objects" data-room="objects" class="room room--objects" aria-label="Objects">
+    <div class="room__inner">
+      <div class="objects__shelf" aria-hidden="true"></div>
+      <h2 class="objects__title">Objects</h2>
+      <p class="objects__desc">The shop is not open yet. But it will be. Objects, clothing, prints, and curiosities — made slowly, released quietly.</p>
+      <form class="objects__form" aria-label="Notify me when the shop opens" onsubmit="event.preventDefault(); alert('Thank you. We will let you know when the first pieces arrive.');">
+        <label for="objects-email" class="sr-only">Your email</label>
+        <input type="email" id="objects-email" placeholder="Your email" aria-required="true">
+        <button type="submit" class="btn">Notify me</button>
+      </form>
+      <p class="objects__note">No spam. Just a quiet note when the first pieces arrive.</p>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="room-about" data-room="about" class="room room--about" aria-label="About">
+    <div class="room__inner">
+      <h2 class="about__title">About</h2>
+      <div class="about__text">
+        <p>Dayjah is a creator of worlds, rooms, images, objects, and emotional spaces. A place for work that would not stay in one shape.</p>
+        <p>The medium changes. The mission does not. What matters is the feeling — the moment something true arrives in the room.</p>
+        <p>For anyone who has ever needed somewhere softer to land. A stylish toyshop for adults. A place where grown-ups are allowed to wonder again.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="room-contact" data-room="contact" class="room room--contact" aria-label="Contact">
+    <div class="room__inner">
+      <h2 class="contact__title">Contact</h2>
+      <p class="contact__desc">For collectors, collaborations, or just to say hello — I would like that.</p>
+      <form class="contact__form" aria-label="Contact form" onsubmit="event.preventDefault(); alert('Thank you. Your message has been received.');">
+        <div class="form-group">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="name" aria-required="true">
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="email" aria-required="true">
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="4" aria-required="true"></textarea>
+        </div>
+        <button type="submit" class="btn btn--outline">Send</button>
+      </form>
+      <p style="margin-top: var(--space-2xl);">
+        <a href="mailto:hello@dayjah.com" class="contact__email-link">hello@dayjah.com</a>
+      </p>
+    </div>
+  </section>
+  </main>
+
+  <!-- ============ GALLERY OVERLAY ============ -->
+  <div class="gallery-overlay" id="gallery-overlay" role="dialog" aria-modal="true" aria-label="Artwork detail">
+    <div class="gallery-overlay__content">
+      <img src="" alt="" class="gallery-overlay__image" id="gallery-overlay-image">
+      <div class="gallery-overlay__caption">
+        <p class="gallery-overlay__title" id="gallery-overlay-title"></p>
+        <p class="gallery-overlay__meta" id="gallery-overlay-meta"></p>
+      </div>
+    </div>
+    <button class="gallery-overlay__close" aria-label="Close artwork view">&times;</button>
+  </div>
+
+  <!-- ============ NAVIGATION COMPASS ============ -->
+  <nav class="compass-nav" aria-label="Room navigation">
+    <button class="compass-nav__btn" data-room="rooms" aria-label="Rooms" aria-current="false">
+      <span class="nav-icon" aria-hidden="true">⌂</span>
+      <span class="compass-nav__label">Rooms</span>
+    </button>
+    <button class="compass-nav__btn" data-room="gallery" aria-label="Gallery" aria-current="false">
+      <span class="nav-icon" aria-hidden="true">∿</span>
+      <span class="compass-nav__label">Gallery</span>
+    </button>
+    <button class="compass-nav__btn" data-room="garden" aria-label="Garden" aria-current="false">
+      <span class="nav-icon" aria-hidden="true">⌒</span>
+      <span class="compass-nav__label">Garden</span>
+    </button>
+    <button class="compass-nav__btn" data-room="objects" aria-label="Objects" aria-current="false">
+      <span class="nav-icon" aria-hidden="true">◇</span>
+      <span class="compass-nav__label">Objects</span>
+    </button>
+    <button class="compass-nav__btn" data-room="about" aria-label="About" aria-current="false">
+      <span class="nav-icon" aria-hidden="true">○</span>
+      <span class="compass-nav__label">About</span>
+    </button>
+    <button class="compass-nav__btn" data-room="contact" aria-label="Contact" aria-current="false">
+      <span class="nav-icon" aria-hidden="true">✉</span>
+      <span class="compass-nav__label">Contact</span>
+    </button>
+  </nav>
+
+  <script src="js/store.js"></script>
+  <script src="js/reduced-motion.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/transitions.js"></script>
+  <script src="js/entrance.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

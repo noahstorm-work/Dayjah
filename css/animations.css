@@ -1,0 +1,151 @@
+/* =============================================
+   ROOM TRANSITIONS
+   ============================================= */
+
+.room {
+  transition: opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
+}
+
+.room.room--enter {
+  opacity: 1;
+}
+
+.room.room--exit {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =============================================
+   ENTRANCE SEQUENCE
+   ============================================= */
+
+.entrance__wordmark.reveal {
+  animation: wordmarkReveal var(--dur-enter) var(--ease-out) forwards;
+}
+
+.entrance__line.reveal {
+  animation: fadeUpReveal var(--dur-slow) var(--ease-out) 0.5s both;
+}
+
+.entrance__sub.reveal {
+  animation: fadeUpReveal var(--dur-slow) var(--ease-out) 1.2s both;
+}
+
+.entrance__invitation.reveal {
+  animation: fadeUpReveal var(--dur-med) var(--ease-out) 2s both;
+}
+
+.entrance__sofa.reveal {
+  animation: fadeIn var(--dur-slow) var(--ease-out) 3s both;
+}
+
+@keyframes wordmarkReveal {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUpReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* =============================================
+   BREATHING ANIMATION (subtle pulse on entrance)
+   ============================================= */
+
+.entrance__wordmark.breathing {
+  animation: breathe 6s var(--ease-in-out) infinite 3s;
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+/* =============================================
+   GALLERY ENTRANCE
+   ============================================= */
+
+.gallery-item {
+  transition: all var(--dur-med) var(--ease-out);
+}
+
+.gallery-item__info {
+  transition: all var(--dur-med) var(--ease-out);
+}
+
+/* =============================================
+   CARD HOVER
+   ============================================= */
+
+.room-card {
+  transition: all var(--dur-med) var(--ease-out);
+}
+
+/* =============================================
+   REDUCED MOTION OVERRIDES
+   ============================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .entrance__wordmark.reveal {
+    opacity: 1;
+    filter: blur(0);
+    transform: none;
+  }
+
+  .entrance__line.reveal,
+  .entrance__sub.reveal,
+  .entrance__invitation.reveal,
+  .entrance__sofa.reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .room {
+    transition: opacity 0.01ms !important;
+  }
+
+  .gallery-item:hover {
+    transform: none !important;
+  }
+
+  .room-card:hover {
+    transform: none !important;
+  }
+
+  .gallery-overlay__content {
+    transform: none !important;
+  }
+
+  .compass-nav__btn.active::after {
+    display: none;
+  }
+}
