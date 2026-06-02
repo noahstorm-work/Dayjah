@@ -6,15 +6,6 @@
   transition: opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
 }
 
-.room.room--enter {
-  opacity: 1;
-}
-
-.room.room--exit {
-  opacity: 0;
-  pointer-events: none;
-}
-
 /* =============================================
    ENTRANCE SEQUENCE
    ============================================= */
@@ -31,12 +22,16 @@
   animation: fadeUpReveal var(--dur-slow) var(--ease-out) 1.2s both;
 }
 
+.entrance__tagline.reveal {
+  animation: fadeUpReveal var(--dur-slow) var(--ease-out) 1.8s both;
+}
+
 .entrance__invitation.reveal {
-  animation: fadeUpReveal var(--dur-med) var(--ease-out) 2s both;
+  animation: fadeUpReveal var(--dur-med) var(--ease-out) 2.5s both;
 }
 
 .entrance__sofa.reveal {
-  animation: fadeIn var(--dur-slow) var(--ease-out) 3s both;
+  animation: fadeIn var(--dur-slow) var(--ease-out) 3.5s both;
 }
 
 @keyframes wordmarkReveal {
@@ -69,7 +64,7 @@
 }
 
 /* =============================================
-   BREATHING ANIMATION (subtle pulse on entrance)
+   BREATHING ANIMATION
    ============================================= */
 
 .entrance__wordmark.breathing {
@@ -79,26 +74,6 @@
 @keyframes breathe {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.85; }
-}
-
-/* =============================================
-   GALLERY ENTRANCE
-   ============================================= */
-
-.gallery-item {
-  transition: all var(--dur-med) var(--ease-out);
-}
-
-.gallery-item__info {
-  transition: all var(--dur-med) var(--ease-out);
-}
-
-/* =============================================
-   CARD HOVER
-   ============================================= */
-
-.room-card {
-  transition: all var(--dur-med) var(--ease-out);
 }
 
 /* =============================================
@@ -123,6 +98,7 @@
 
   .entrance__line.reveal,
   .entrance__sub.reveal,
+  .entrance__tagline.reveal,
   .entrance__invitation.reveal,
   .entrance__sofa.reveal {
     opacity: 1;

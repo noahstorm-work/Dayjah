@@ -6,6 +6,7 @@ const Entrance = {
     const wordmark = document.querySelector('.entrance__wordmark');
     const line = document.querySelector('.entrance__line');
     const sub = document.querySelector('.entrance__sub');
+    const tagline = document.querySelector('.entrance__tagline');
     const invitation = document.querySelector('.entrance__invitation');
     const sofa = document.querySelector('.entrance__sofa');
     const entrance = document.querySelector('[data-room="entrance"]');
@@ -22,6 +23,7 @@ const Entrance = {
         wordmark.classList.add('reveal');
         line.classList.add('reveal');
         sub.classList.add('reveal');
+        tagline.classList.add('reveal');
         invitation.classList.add('reveal');
         sofa.classList.add('reveal');
         return;
@@ -34,7 +36,8 @@ const Entrance = {
 
       setTimeout(() => line.classList.add('reveal'), 500);
       setTimeout(() => sub.classList.add('reveal'), 1500);
-      setTimeout(() => invitation.classList.add('reveal'), 2500);
+      setTimeout(() => tagline.classList.add('reveal'), 2000);
+      setTimeout(() => invitation.classList.add('reveal'), 2800);
       setTimeout(() => sofa.classList.add('reveal'), 3500);
     };
 

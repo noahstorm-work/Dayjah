@@ -12,11 +12,12 @@
   align-items: center;
   gap: var(--space-xs);
   padding: var(--space-sm) var(--space-md);
-  background: color-mix(in srgb, var(--c-dusk) 75%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--c-dusk) 80%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 100px;
-  border: 1px solid color-mix(in srgb, var(--c-bone) 15%, transparent);
+  border: 1px solid var(--c-border);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
   opacity: 0;
   transition: opacity var(--dur-med) var(--ease-out);
 }
@@ -42,8 +43,8 @@
 
 .compass-nav__btn:hover,
 .compass-nav__btn:focus-visible {
-  color: var(--c-bone);
-  background: color-mix(in srgb, var(--c-bone) 10%, transparent);
+  color: var(--c-gold-light);
+  background: color-mix(in srgb, var(--c-gold) 12%, transparent);
 }
 
 .compass-nav__btn.active {
@@ -60,6 +61,7 @@
   height: 4px;
   border-radius: 50%;
   background: var(--c-gold);
+  box-shadow: 0 0 6px var(--c-gold);
 }
 
 .compass-nav__label {
@@ -109,9 +111,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, var(--c-dusk) 85%, transparent);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: color-mix(in srgb, var(--c-dusk) 90%, transparent);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--dur-med) var(--ease-out);
@@ -144,12 +146,14 @@
   max-height: 65vh;
   object-fit: contain;
   border-radius: 4px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.6),
+    0 0 40px color-mix(in srgb, var(--c-gold) 8%, transparent);
 }
 
 .gallery-overlay__caption {
   text-align: center;
-  color: var(--c-bone);
+  color: var(--c-text);
   max-width: 480px;
 }
 
@@ -158,7 +162,7 @@
   font-size: var(--fs-lg);
   font-weight: var(--fw-light);
   font-style: italic;
-  color: var(--c-bone);
+  color: var(--c-text-head);
   margin-bottom: var(--space-xs);
 }
 
@@ -179,44 +183,17 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: var(--c-bone);
+  color: var(--c-stone);
   font-size: var(--fs-xl);
   transition: all var(--dur-fast) var(--ease-out);
+  border: 1px solid transparent;
 }
 
 .gallery-overlay__close:hover,
 .gallery-overlay__close:focus-visible {
-  background: color-mix(in srgb, var(--c-bone) 10%, transparent);
   color: var(--c-gold);
-}
-
-/* =============================================
-   DOOR FRAME (transition effect)
-   ============================================= */
-
-.door-frame {
-  position: fixed;
-  inset: 0;
-  z-index: calc(var(--z-room) + 5);
-  pointer-events: none;
-  display: flex;
-}
-
-.door-frame__panel {
-  flex: 1;
-  background: var(--c-dusk);
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform var(--dur-med) var(--ease-in-out);
-}
-
-.door-frame.active .door-frame__panel {
-  transform: scaleY(1);
-}
-
-.door-frame.closing .door-frame__panel {
-  transform: scaleY(0);
-  transform-origin: bottom;
+  border-color: color-mix(in srgb, var(--c-gold) 30%, transparent);
+  background: color-mix(in srgb, var(--c-gold) 8%, transparent);
 }
 
 /* =============================================
@@ -263,7 +240,7 @@
 }
 
 /* =============================================
-   TEXTURE OVERLAY (subtle paper grain)
+   TEXTURE OVERLAY (paper grain)
    ============================================= */
 
 .texture-overlay {
@@ -271,7 +248,7 @@
   inset: 0;
   z-index: var(--z-base);
   pointer-events: none;
-  opacity: 0.03;
+  opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
@@ -290,7 +267,7 @@
 .form-group label {
   font-family: var(--font-body);
   font-size: var(--fs-sm);
-  color: var(--c-slate);
+  color: var(--c-stone);
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -298,19 +275,26 @@
 .form-group input,
 .form-group textarea {
   padding: var(--space-md);
-  background: var(--c-warm-white);
-  border: 1px solid var(--c-linen);
+  background: var(--c-surface-lt);
+  border: 1px solid var(--c-border);
   border-radius: 4px;
   font-family: var(--font-body);
   font-size: var(--fs-base);
-  color: var(--c-charcoal);
+  color: var(--c-text);
   transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--c-stone);
+  opacity: 0.6;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--c-gold);
   outline: none;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--c-gold) 20%, transparent);
 }
 
 .form-group textarea {
@@ -323,8 +307,8 @@
   align-items: center;
   gap: var(--space-sm);
   padding: var(--space-md) var(--space-xl);
-  background: var(--c-charcoal);
-  color: var(--c-bone);
+  background: var(--c-gold);
+  color: var(--c-dusk);
   font-family: var(--font-body);
   font-size: var(--fs-sm);
   font-weight: var(--fw-medium);
@@ -333,22 +317,24 @@
   border-radius: 4px;
   transition: all var(--dur-fast) var(--ease-out);
   cursor: pointer;
+  border: none;
 }
 
 .btn:hover,
 .btn:focus-visible {
-  background: var(--c-gold);
+  background: var(--c-gold-light);
   color: var(--c-dusk);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--c-gold) 25%, transparent);
 }
 
 .btn--outline {
   background: transparent;
-  border: 1px solid var(--c-charcoal);
-  color: var(--c-charcoal);
+  border: 1px solid var(--c-gold);
+  color: var(--c-gold);
 }
 
 .btn--outline:hover,
 .btn--outline:focus-visible {
-  background: var(--c-charcoal);
-  color: var(--c-bone);
+  background: var(--c-gold);
+  color: var(--c-dusk);
 }
