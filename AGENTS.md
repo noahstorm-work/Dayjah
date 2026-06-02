@@ -21,7 +21,8 @@ index.html         — all rooms + links to css/ js/
 css/tokens.css     — design tokens (colors, spacing, type)
 css/base.css       — reset + base typography
 css/components.css — reusable components (nav, overlays, gallery)
-css/rooms.css      — all room-specific styles
+css/rooms.css      — all room-specific styles (hub, garden, objects, about, contact)
+css/gallery.css    — gallery grid, item cards, overlay info
 css/animations.css — transitions, entrance, motion
 js/main.js         — entry point, imports all modules
 js/store.js        — room state (current, previous)

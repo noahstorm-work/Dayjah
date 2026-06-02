@@ -34,12 +34,6 @@ const Navigation = {
     }
   },
 
-  hide() {
-    if (this.nav) {
-      this.nav.classList.remove('visible');
-    }
-  },
-
   updateActive(roomId) {
     this.buttons.forEach(btn => {
       btn.classList.toggle('active', btn.dataset.room === roomId);

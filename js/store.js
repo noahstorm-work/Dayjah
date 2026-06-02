@@ -2,7 +2,6 @@ const Store = {
   state: {
     currentRoom: 'entrance',
     previousRoom: null,
-    entranceComplete: false,
     isTransitioning: false,
     galleryOpen: false,
     galleryData: null,

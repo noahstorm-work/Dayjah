@@ -1,5 +1,4 @@
 const Entrance = {
-  sequence: null,
   completed: false,
 
   init() {
@@ -62,8 +61,8 @@ const Entrance = {
 
     if (entrance) {
       entrance.addEventListener('click', (e) => {
-        if (e.target === entrance || e.target.closest('.room__inner') === e.target) {
-          if (this.completed) this.enter();
+        if (e.target === entrance && this.completed) {
+          this.enter();
         }
       });
     }
@@ -76,8 +75,6 @@ const Entrance = {
         }
       }
     });
-
-    this.sequence = { reveal };
   },
 
   enter() {

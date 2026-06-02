@@ -16,7 +16,10 @@ const Gallery = {
 
   init() {
     this.overlay = document.getElementById('gallery-overlay');
-    if (!this.overlay) return;
+    if (!this.overlay) {
+      console.warn('Gallery: overlay element not found');
+      return;
+    }
     this.image = this.overlay.querySelector('.gallery-overlay__image');
     this.titleEl = this.overlay.querySelector('.gallery-overlay__title');
     this.metaEl = this.overlay.querySelector('.gallery-overlay__meta');
@@ -69,9 +72,7 @@ const Gallery = {
   },
 
   esc(str) {
-    const div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
   },
 
   open(item) {

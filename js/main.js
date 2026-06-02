@@ -72,11 +72,12 @@
 
     const hash = window.location.hash.slice(1);
     if (hash && Store.get('rooms').includes(hash) && hash !== 'entrance') {
-      setTimeout(() => { Navigation.show(); Router.goTo(hash, true); }, 100);
+      Navigation.show();
+      setTimeout(() => Router.goTo(hash, true), 50);
+    } else {
+      Store.set('currentRoom', 'entrance');
+      document.querySelector('[data-room="entrance"]')?.classList.add('active');
     }
-
-    Store.set('currentRoom', 'entrance');
-    document.querySelector('[data-room="entrance"]')?.classList.add('active');
 
     /* Event delegation: room cards */
     document.getElementById('rooms-grid')?.addEventListener('click', (e) => {
