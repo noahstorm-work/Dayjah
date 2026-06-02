@@ -1,6 +1,6 @@
 # Dayjah
 
-A stylish toyshop for adults. A place for work that would not stay in one shape.
+A stylish art shop for adults. A place for work that would not stay in one shape.
 
 A premium, modern, emotionally warm web experience — a destination with rooms, not a template.
 
