@@ -115,11 +115,12 @@
       <div class="objects__shelf" aria-hidden="true"></div>
       <h2 class="objects__title">Objects</h2>
       <p class="objects__desc">The shop is not open yet. But it will be. Objects, clothing, prints, and quiet pieces — made slowly, released quietly.</p>
-      <form class="objects__form" aria-label="Notify me when the shop opens">
-        <label for="objects-email" class="sr-only">Your email</label>
-        <input type="email" id="objects-email" placeholder="Your email" aria-required="true" autocomplete="email">
-        <button type="submit" class="btn">Notify me</button>
-      </form>
+        <form class="objects__form" aria-label="Notify me when the shop opens">
+          <label for="objects-email" class="sr-only">Your email</label>
+          <input type="email" id="objects-email" placeholder="Your email" aria-required="true" autocomplete="email">
+          <button type="submit" class="btn">Notify me</button>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
       <p class="objects__note">No spam. Just a quiet note when the first pieces arrive.</p>
     </div>
   </section>
@@ -155,6 +156,7 @@
           <textarea id="contact-message" name="message" rows="4" aria-required="true" autocomplete="off"></textarea>
         </div>
         <button type="submit" class="btn btn--outline">Send</button>
+        <p class="form-status" aria-live="polite"></p>
       </form>
       <p class="contact__email-wrapper">
         <a href="mailto:hello@dayjah.co.uk" class="contact__email-link">hello@dayjah.co.uk</a>

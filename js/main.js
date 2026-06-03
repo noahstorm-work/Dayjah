@@ -35,30 +35,90 @@
     ).join('');
   }
 
-  /* ---- Form Handlers ---- */
+  /* ---- Form Submission ---- */
+  async function submitForm(endpoint, data) {
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      return await res.json();
+    } catch {
+      return { error: 'Could not reach the server. Please try again.' };
+    }
+  }
+
+  function showStatus(form, message, isError) {
+    let el = form.querySelector('.form-status');
+    if (!el) {
+      el = document.createElement('p');
+      el.className = 'form-status';
+      form.appendChild(el);
+    }
+    el.textContent = message;
+    el.className = 'form-status' + (isError ? ' form-status--error' : '');
+  }
+
+  function clearStatus(form) {
+    const el = form.querySelector('.form-status');
+    if (el) el.textContent = '';
+  }
+
+  function setButtonLoading(btn, loading) {
+    if (loading) {
+      btn.dataset.origText = btn.textContent;
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+    } else {
+      btn.textContent = btn.dataset.origText || btn.textContent;
+      btn.disabled = false;
+    }
+  }
+
   function handleObjectsForm(e) {
     e.preventDefault();
+    const form = e.currentTarget;
+    const btn = form.querySelector('.btn');
     const input = document.getElementById('objects-email');
     const email = input ? input.value.trim() : '';
-    if (!email) { alert('Please enter your email address.'); input?.focus(); return; }
-    if (!isValidEmail(email)) { alert('Please enter a valid email address.'); input?.focus(); return; }
-    alert('Thank you. We will let you know when the first pieces arrive.');
-    input.value = '';
+    clearStatus(form);
+    if (!email) { showStatus(form, 'Please enter your email address.', true); input?.focus(); return; }
+    if (!isValidEmail(email)) { showStatus(form, 'Please enter a valid email address.', true); input?.focus(); return; }
+    setButtonLoading(btn, true);
+    submitForm('/api/contact', { email, type: 'waitlist' }).then(result => {
+      if (result.success) {
+        showStatus(form, 'Thank you. We will let you know when the first pieces arrive.');
+        input.value = '';
+      } else {
+        showStatus(form, result.error || 'Something went wrong.', true);
+      }
+    }).finally(() => setButtonLoading(btn, false));
   }
 
   function handleContactForm(e) {
     e.preventDefault();
+    const form = e.currentTarget;
+    const btn = form.querySelector('.btn');
     const name = document.getElementById('contact-name');
     const email = document.getElementById('contact-email');
     const message = document.getElementById('contact-message');
     if (!name || !email || !message) return;
     const n = name.value.trim(), em = email.value.trim(), msg = message.value.trim();
-    if (!n) { alert('Please enter your name.'); name.focus(); return; }
-    if (!em) { alert('Please enter your email address.'); email.focus(); return; }
-    if (!isValidEmail(em)) { alert('Please enter a valid email address.'); email.focus(); return; }
-    if (!msg) { alert('Please enter a message.'); message.focus(); return; }
-    alert('Thank you. Your message has been received.');
-    name.value = ''; email.value = ''; message.value = '';
+    clearStatus(form);
+    if (!n) { showStatus(form, 'Please enter your name.', true); name.focus(); return; }
+    if (!em) { showStatus(form, 'Please enter your email address.', true); email.focus(); return; }
+    if (!isValidEmail(em)) { showStatus(form, 'Please enter a valid email address.', true); email.focus(); return; }
+    if (!msg) { showStatus(form, 'Please enter a message.', true); message.focus(); return; }
+    setButtonLoading(btn, true);
+    submitForm('/api/contact', { name: n, email: em, message: msg, type: 'contact' }).then(result => {
+      if (result.success) {
+        showStatus(form, 'Thank you. Your message has been received.');
+        name.value = ''; email.value = ''; message.value = '';
+      } else {
+        showStatus(form, result.error || 'Something went wrong.', true);
+      }
+    }).finally(() => setButtonLoading(btn, false));
   }
 
   /* ---- Init ---- */

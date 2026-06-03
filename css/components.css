@@ -339,3 +339,17 @@
   background: var(--c-gold);
   color: var(--c-dusk);
 }
+
+/* ---- Form Status ---- */
+
+.form-status {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  color: var(--c-moss);
+  margin-top: var(--space-md);
+  opacity: 0.9;
+}
+
+.form-status--error {
+  color: var(--c-clay);
+}
