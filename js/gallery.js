@@ -1,12 +1,13 @@
 const Gallery = {
-  data: [
-    { title: 'Horizon Study', meta: 'Digital pigment on canvas, 2026', src: 'assets/images/long-gallery/horizon-study.svg', alt: 'Horizon Study — Abstract landscape with warm earth tones and atmospheric light' },
-    { title: 'Field of Form', meta: 'Mixed media on paper, 2025', src: 'assets/images/long-gallery/field-of-form.svg', alt: 'Field of Form — Abstract organic composition in earth and moss tones' },
-    { title: 'Face Study', meta: 'Ink on paper, 2025', src: 'assets/images/drawing-room/face-study.svg', alt: 'Face Study — Continuous line portrait in warm charcoal' },
-    { title: 'Line Form', meta: 'Charcoal on paper, 2025', src: 'assets/images/drawing-room/line-form.svg', alt: 'Line Form — Abstract flowing line composition in warm tones' },
-    { title: 'Botanical Study', meta: 'Graphite on paper, 2025', src: 'assets/images/cabinet/botanical-study.svg', alt: 'Botanical Study — Delicate botanical line study in warm earth tones' },
-    { title: 'Geometric Study', meta: 'Ink and pigment on paper, 2026', src: 'assets/images/cabinet/geometric-study.svg', alt: 'Geometric Study — Abstract geometric composition in warm clay and charcoal' }
-  ],
+  data: Array.from({ length: 36 }, (_, i) => {
+    const n = String(i + 1).padStart(2, '0');
+    return {
+      title: `Gallery ${n}`,
+      meta: 'Digital work, 2026',
+      src: `assets/images/gallery/gallery-${n}.webp`,
+      alt: 'Abstract digital artwork in warm earth tones'
+    };
+  }),
 
   overlay: null,
   image: null,
@@ -33,6 +34,10 @@ const Gallery = {
         const item = e.target.closest('.gallery-item');
         if (item) this.open(item);
       });
+
+      grid.addEventListener('contextmenu', (e) => {
+        if (e.target.closest('.gallery-item')) e.preventDefault();
+      });
     }
 
     this.closeBtn?.addEventListener('click', () => this.close());
@@ -56,7 +61,8 @@ const Gallery = {
         <img src="${this.esc(item.src)}"
              alt="${this.esc(item.alt)}"
              class="gallery-item__image"
-             loading="lazy">
+             loading="lazy"
+             draggable="false">
         <div class="gallery-item__info">
           <span class="gallery-item__title">${this.esc(item.title)}</span>
           <span class="gallery-item__meta">${this.esc(item.meta)}</span>
@@ -68,6 +74,7 @@ const Gallery = {
       img.addEventListener('error', function() {
         this.parentElement.classList.add('gallery-item--broken');
       });
+      img.addEventListener('dragstart', e => e.preventDefault());
     });
   },
 

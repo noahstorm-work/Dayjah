@@ -340,6 +340,18 @@
   color: var(--c-dusk);
 }
 
+/* ---- Site Footer ---- */
+
+.site-footer__text {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  color: var(--c-stone);
+  opacity: 0.5;
+  margin-top: var(--space-3xl);
+  letter-spacing: 0.05em;
+}
+
 /* ---- Form Status ---- */
 
 .form-status {
