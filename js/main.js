@@ -14,27 +14,6 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-  /* ---- Rooms Data ---- */
-  const RoomsData = [
-    { target: 'gallery', icon: '∿', name: 'The Gallery', desc: 'One piece at a time. Space to look closely.', ariaLabel: 'Enter The Gallery' },
-    { target: 'garden',  icon: '⌒', name: 'The Garden',  desc: 'Outside. Breathing. Words and stillness.',  ariaLabel: 'Enter The Garden' },
-    { target: 'objects', icon: '◇', name: 'Objects',     desc: 'Curiosities, clothing, things made and found.', ariaLabel: 'Enter Objects' },
-    { target: 'about',   icon: '○', name: 'About',       desc: 'The maker, the mission, the why.',         ariaLabel: 'About Dayjah' }
-  ];
-
-  function renderRooms() {
-    const grid = document.getElementById('rooms-grid');
-    if (!grid) return;
-    grid.innerHTML = RoomsData.map(r =>
-      `<button class="room-card" data-room-target="${r.target}" role="listitem" aria-label="${r.ariaLabel}">
-        <span class="room-card__icon" aria-hidden="true">${r.icon}</span>
-        <span class="room-card__name">${r.name}</span>
-        <span class="room-card__desc">${r.desc}</span>
-        <span class="room-card__arrow" aria-hidden="true">→</span>
-      </button>`
-    ).join('');
-  }
-
   /* ---- Form Submission ---- */
   async function submitForm(endpoint, data) {
     try {
@@ -68,7 +47,7 @@
   function setButtonLoading(btn, loading) {
     if (loading) {
       btn.dataset.origText = btn.textContent;
-      btn.textContent = 'Sending…';
+      btn.textContent = 'Sending\u2026';
       btn.disabled = true;
     } else {
       btn.textContent = btn.dataset.origText || btn.textContent;
@@ -76,42 +55,24 @@
     }
   }
 
-  function handleObjectsForm(e) {
+  /* ---- Enquiries Form ---- */
+  function handleEnquiriesForm(e) {
     e.preventDefault();
     const form = e.currentTarget;
     const btn = form.querySelector('.btn');
-    const input = document.getElementById('objects-email');
-    const email = input ? input.value.trim() : '';
-    clearStatus(form);
-    if (!email) { showStatus(form, 'Please enter your email address.', true); input?.focus(); return; }
-    if (!isValidEmail(email)) { showStatus(form, 'Please enter a valid email address.', true); input?.focus(); return; }
-    setButtonLoading(btn, true);
-    submitForm('/api/contact', { email, type: 'waitlist' }).then(result => {
-      if (result.success) {
-        showStatus(form, 'Thank you. We will let you know when the first pieces arrive.');
-        input.value = '';
-      } else {
-        showStatus(form, result.error || 'Something went wrong.', true);
-      }
-    }).finally(() => setButtonLoading(btn, false));
-  }
-
-  function handleContactForm(e) {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const btn = form.querySelector('.btn');
-    const name = document.getElementById('contact-name');
-    const email = document.getElementById('contact-email');
-    const message = document.getElementById('contact-message');
+    const name = document.getElementById('enquiry-name');
+    const email = document.getElementById('enquiry-email');
+    const type = document.getElementById('enquiry-type');
+    const message = document.getElementById('enquiry-message');
     if (!name || !email || !message) return;
-    const n = name.value.trim(), em = email.value.trim(), msg = message.value.trim();
+    const n = name.value.trim(), em = email.value.trim(), t = type.value, msg = message.value.trim();
     clearStatus(form);
     if (!n) { showStatus(form, 'Please enter your name.', true); name.focus(); return; }
     if (!em) { showStatus(form, 'Please enter your email address.', true); email.focus(); return; }
     if (!isValidEmail(em)) { showStatus(form, 'Please enter a valid email address.', true); email.focus(); return; }
     if (!msg) { showStatus(form, 'Please enter a message.', true); message.focus(); return; }
     setButtonLoading(btn, true);
-    submitForm('/api/contact', { name: n, email: em, message: msg, type: 'contact' }).then(result => {
+    submitForm('/api/contact', { name: n, email: em, type: t || 'general', message: msg }).then(result => {
       if (result.success) {
         showStatus(form, 'Thank you. Your message has been received.');
         name.value = ''; email.value = ''; message.value = '';
@@ -121,32 +82,57 @@
     }).finally(() => setButtonLoading(btn, false));
   }
 
+  /* ---- Editions Form ---- */
+  function handleEditionsForm(e) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const btn = form.querySelector('.btn');
+    const input = document.getElementById('editions-email');
+    const email = input ? input.value.trim() : '';
+    clearStatus(form);
+    if (!email) { showStatus(form, 'Please enter your email address.', true); input?.focus(); return; }
+    if (!isValidEmail(email)) { showStatus(form, 'Please enter a valid email address.', true); input?.focus(); return; }
+    setButtonLoading(btn, true);
+    submitForm('/api/contact', { email, type: 'editions' }).then(result => {
+      if (result.success) {
+        showStatus(form, 'Thank you. We will let you know when the first editions arrive.');
+        input.value = '';
+      } else {
+        showStatus(form, result.error || 'Something went wrong.', true);
+      }
+    }).finally(() => setButtonLoading(btn, false));
+  }
+
+  /* ---- Diary Navigation ---- */
+  function initDiaryNav() {
+    document.querySelector('.diary-nav__prev')?.addEventListener('click', () => Diary.prev());
+    document.querySelector('.diary-nav__next')?.addEventListener('click', () => Diary.next());
+
+    document.querySelectorAll('.diary-nav__dots .diary-nav__dot').forEach((dot, i) => {
+      dot.addEventListener('click', () => Diary.goTo(i));
+    });
+  }
+
   /* ---- Init ---- */
   document.addEventListener('DOMContentLoaded', () => {
     initReducedMotion();
     Router.init();
     Navigation.init();
     Gallery.init();
-    Entrance.init();
-    renderRooms();
+    Home.init();
+    Diary.init();
+    initDiaryNav();
 
     const hash = window.location.hash.slice(1);
-    if (hash && Store.get('rooms').includes(hash) && hash !== 'entrance') {
+    if (hash && Store.get('rooms').includes(hash) && hash !== 'home') {
       Navigation.show();
       setTimeout(() => Router.goTo(hash, true), 50);
     } else {
-      Store.set('currentRoom', 'entrance');
-      document.querySelector('[data-room="entrance"]')?.classList.add('active');
+      Store.set('currentRoom', 'home');
+      document.querySelector('[data-room="home"]')?.classList.add('active');
     }
 
-    /* Event delegation: room cards */
-    document.getElementById('rooms-grid')?.addEventListener('click', (e) => {
-      const card = e.target.closest('.room-card');
-      if (card) Router.goTo(card.dataset.roomTarget);
-    });
-
-    /* Form handlers */
-    document.querySelector('.objects__form')?.addEventListener('submit', handleObjectsForm);
-    document.querySelector('.contact__form')?.addEventListener('submit', handleContactForm);
+    document.querySelector('.enquiries__form')?.addEventListener('submit', handleEnquiriesForm);
+    document.querySelector('.editions__form')?.addEventListener('submit', handleEditionsForm);
   });
 })();

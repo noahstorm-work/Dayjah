@@ -1,29 +1,25 @@
 /* =============================================
-   ENTRANCE SEQUENCE
+   HOME ENTRANCE SEQUENCE
    ============================================= */
 
-.entrance__wordmark.reveal {
+.home__wordmark.reveal {
   animation: wordmarkReveal var(--dur-enter) var(--ease-out) forwards;
 }
 
-.entrance__line.reveal {
-  animation: fadeUpReveal var(--dur-slow) var(--ease-out) 0.5s both;
+.home__spine.reveal {
+  animation: fadeUpReveal var(--dur-slow) var(--ease-out) 0.6s both;
 }
 
-.entrance__sub.reveal {
+.home__subtitle.reveal {
   animation: fadeUpReveal var(--dur-slow) var(--ease-out) 1.2s both;
 }
 
-.entrance__tagline.reveal {
-  animation: fadeUpReveal var(--dur-slow) var(--ease-out) 1.8s both;
+.home__cta-group.reveal {
+  animation: fadeUpReveal var(--dur-med) var(--ease-out) 1.8s both;
 }
 
-.entrance__invitation.reveal {
-  animation: fadeUpReveal var(--dur-med) var(--ease-out) 2.5s both;
-}
-
-.entrance__sofa.reveal {
-  animation: fadeIn var(--dur-slow) var(--ease-out) 3.5s both;
+.home__sofa.reveal {
+  animation: fadeIn var(--dur-slow) var(--ease-out) 2.5s both;
 }
 
 @keyframes wordmarkReveal {
@@ -56,19 +52,6 @@
 }
 
 /* =============================================
-   BREATHING ANIMATION
-   ============================================= */
-
-.entrance__wordmark.breathing {
-  animation: breathe 6s var(--ease-in-out) infinite 3s;
-}
-
-@keyframes breathe {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.85; }
-}
-
-/* =============================================
    REDUCED MOTION OVERRIDES
    ============================================= */
 
@@ -82,17 +65,16 @@
     scroll-behavior: auto !important;
   }
 
-  .entrance__wordmark.reveal {
+  .home__wordmark.reveal {
     opacity: 1;
     filter: blur(0);
     transform: none;
   }
 
-  .entrance__line.reveal,
-  .entrance__sub.reveal,
-  .entrance__tagline.reveal,
-  .entrance__invitation.reveal,
-  .entrance__sofa.reveal {
+  .home__spine.reveal,
+  .home__subtitle.reveal,
+  .home__cta-group.reveal,
+  .home__sofa.reveal {
     opacity: 1;
     transform: none;
   }
@@ -105,15 +87,7 @@
     transform: none !important;
   }
 
-  .room-card:hover {
-    transform: none !important;
-  }
-
   .gallery-overlay__content {
     transform: none !important;
-  }
-
-  .compass-nav__btn.active::after {
-    display: none;
   }
 }

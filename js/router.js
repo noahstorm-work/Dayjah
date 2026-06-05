@@ -16,7 +16,7 @@ const Router = {
     Store.set('previousRoom', prev);
     Store.set('currentRoom', roomId);
 
-    if (!isPop && roomId !== 'entrance') {
+    if (!isPop && roomId !== 'home') {
       window.history.pushState({ room: roomId }, '', `#${roomId}`);
     }
 

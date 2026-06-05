@@ -1,15 +1,16 @@
 .room--gallery {
-  background: var(--c-dusk);
+  background: var(--c-body);
 }
 
 .gallery-header {
-  margin-bottom: var(--space-3xl);
+  margin-bottom: var(--space-4xl);
 }
 
 .gallery-header__title {
   font-family: var(--font-display);
   font-size: var(--fs-2xl);
   font-weight: var(--fw-light);
+  font-style: italic;
   color: var(--c-text-head);
   margin-bottom: var(--space-md);
 }
@@ -17,14 +18,15 @@
 .gallery-header__desc {
   font-family: var(--font-body);
   font-size: var(--fs-base);
-  color: var(--c-cream);
+  color: var(--c-text-muted);
   max-width: 480px;
+  line-height: var(--lh-loose);
 }
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-xl);
+  gap: var(--space-2xl);
 }
 
 .gallery-item {
@@ -34,7 +36,7 @@
   overflow: hidden;
   background: var(--c-surface);
   transition: all var(--dur-med) var(--ease-out);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 12px rgba(42,40,37,0.06);
 }
 
 .gallery-item::before {
@@ -53,17 +55,17 @@
   font-size: var(--fs-2xl);
   font-style: italic;
   color: var(--c-gold);
-  opacity: 0.12;
+  opacity: 0.08;
   z-index: 3;
   pointer-events: none;
 }
 
 .gallery-item:hover,
 .gallery-item:focus-visible {
-  transform: scale(1.02);
+  transform: translateY(-4px);
   box-shadow:
-    0 12px 40px rgba(0,0,0,0.5),
-    0 0 40px color-mix(in srgb, var(--c-gold) 8%, transparent);
+    0 12px 40px rgba(42,40,37,0.12),
+    0 0 0 1px var(--c-border);
 }
 
 .gallery-item__image {
@@ -78,7 +80,7 @@
 }
 
 .gallery-item:hover .gallery-item__image {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .gallery-item--broken {
@@ -93,7 +95,7 @@
   content: 'Image unavailable';
   font-family: var(--font-body);
   font-size: var(--fs-sm);
-  color: var(--c-stone);
+  color: var(--c-text-muted);
   letter-spacing: 0.05em;
 }
 
@@ -103,8 +105,8 @@
   left: 0;
   right: 0;
   padding: var(--space-lg);
-  background: linear-gradient(to top, rgba(26,24,23,0.9) 0%, color-mix(in srgb, var(--c-dusk) 60%, transparent) 60%, transparent 100%);
-  color: var(--c-text);
+  background: linear-gradient(to top, rgba(26,24,23,0.85) 0%, rgba(26,24,23,0.4) 60%, transparent 100%);
+  color: var(--c-ivory);
   opacity: 0;
   transform: translateY(10px);
   transition: all var(--dur-med) var(--ease-out);
@@ -122,7 +124,7 @@
   font-size: var(--fs-md);
   font-weight: var(--fw-light);
   font-style: italic;
-  color: var(--c-text-head);
+  color: var(--c-ivory);
 }
 
 .gallery-item__meta {

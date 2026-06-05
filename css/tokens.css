@@ -1,20 +1,24 @@
 :root {
-  /* ---- Core Palette: warm, dark, atmospheric, artistic ---- */
-  --c-dusk:       #1A1817;  /* warm off-black — main backgrounds */
-  --c-charcoal:   #2A2825;  /* deep charcoal — dark surfaces */
-  --c-night:      #1E2428;  /* rain-dark blue/black — atmospheric depth */
-  --c-cream:      #C9BFA8;  /* aged cream — secondary text */
-  --c-gold:       #C4A265;  /* soft amber/gold — primary accent */
-  --c-gold-light: #D4BC8A;  /* lighter gold — hover, highlight */
-  --c-bronze:     #8B7D5E;  /* oxidised bronze — subtle accent */
-  --c-moss:       #5A6B4F;  /* moss/olive — garden accent */
-  --c-stone:      #8A847A;  /* stone grey — muted text */
-  --c-text:       #D4CEC4;  /* warm light grey — body text on dark */
-  --c-text-head:  #EDE8DF;  /* heading text on dark backgrounds */
-  --c-surface:    #2A2724;  /* dark surface — cards, panels */
-  --c-surface-lt: #35312E;  /* lighter dark surface */
-  --c-border:     #3A3632;  /* dark border */
-  --c-body:       #1E1C1A;  /* page body background */
+  /* ---- Core Palette: warm, light, literary, art-book ---- */
+  --c-ivory:       #F5F0E8;  /* warm ivory — main backgrounds */
+  --c-stone:       #EDE8DF;  /* pale stone — secondary backgrounds */
+  --c-bone:        #E8E0D6;  /* bone — subtle surfaces */
+  --c-cream:       #D4CEC4;  /* aged cream — muted text */
+  --c-charcoal:    #2A2825;  /* charcoal — primary text */
+  --c-ink:         #1A1817;  /* warm ink — headings */
+  --c-dusk:        #3A3632;  /* warm dusk — borders, subtle elements */
+  --c-gold:        #C4A265;  /* soft amber/gold — primary accent */
+  --c-gold-light:  #D4BC8A;  /* lighter gold — hover, highlight */
+  --c-bronze:      #8B7D5E;  /* oxidised bronze — subtle accent */
+  --c-moss:        #5A6B4F;  /* moss/olive — garden accent */
+  --c-clay:        #A6745C;  /* clay — warmth */
+  --c-text:        #2A2825;  /* charcoal — body text */
+  --c-text-head:   #1A1817;  /* warm ink — heading text */
+  --c-text-muted:  #8A847A;  /* muted grey — secondary text */
+  --c-surface:     rgba(42,40,37,0.04);  /* subtle surface tint */
+  --c-surface-lt:  rgba(42,40,37,0.07);  /* lighter surface */
+  --c-border:      rgba(42,40,37,0.12);  /* warm border */
+  --c-body:        #F5F0E8;  /* page body background */
 
   /* ---- Typography ---- */
   --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -33,6 +37,7 @@
   --lh-tight: 1.1;
   --lh-body:  1.6;
   --lh-loose: 2;
+  --lh-reading: 1.8;
 
   --fw-light:   300;
   --fw-regular: 400;
@@ -53,6 +58,7 @@
   /* ---- Layout ---- */
   --content-max: 960px;
   --content-narrow: 640px;
+  --reading-width: 580px;
   --pad-desktop: 6rem;
   --pad-tablet: 3rem;
   --pad-mobile: 1.5rem;

@@ -1,11 +1,11 @@
 const Store = {
   state: {
-    currentRoom: 'entrance',
+    currentRoom: 'home',
     previousRoom: null,
     isTransitioning: false,
     galleryOpen: false,
     galleryData: null,
-    rooms: ['entrance', 'rooms', 'gallery', 'garden', 'objects', 'about', 'contact']
+    rooms: ['home', 'diary', 'gallery', 'sanctuary', 'editions', 'enquiries']
   },
 
   get(key) {

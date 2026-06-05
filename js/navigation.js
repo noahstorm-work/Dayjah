@@ -3,8 +3,8 @@ const Navigation = {
   buttons: [],
 
   init() {
-    this.nav = document.querySelector('.compass-nav');
-    this.buttons = this.nav?.querySelectorAll('.compass-nav__btn');
+    this.nav = document.querySelector('.site-nav');
+    this.buttons = this.nav?.querySelectorAll('.site-nav__btn');
 
     if (!this.nav) return;
 
@@ -31,6 +31,12 @@ const Navigation = {
   show() {
     if (this.nav) {
       this.nav.classList.add('visible');
+    }
+  },
+
+  hide() {
+    if (this.nav) {
+      this.nav.classList.remove('visible');
     }
   },
 

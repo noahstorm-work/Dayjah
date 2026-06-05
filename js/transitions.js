@@ -28,13 +28,12 @@ const Transitions = {
 
   getRoomBg(roomId) {
     const map = {
-      entrance: 'var(--c-dusk)',
-      rooms: 'var(--c-body)',
+      home: 'var(--c-body)',
+      diary: 'var(--c-body)',
       gallery: 'var(--c-body)',
-      garden: 'var(--c-dusk)',
-      objects: 'var(--c-charcoal)',
-      about: 'var(--c-body)',
-      contact: 'var(--c-body)'
+      sanctuary: 'var(--c-body)',
+      editions: 'var(--c-body)',
+      enquiries: 'var(--c-body)'
     };
     return map[roomId] || 'var(--c-body)';
   },

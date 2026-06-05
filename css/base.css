@@ -83,7 +83,7 @@ ul, ol {
   list-style: none;
 }
 
-input, textarea {
+input, textarea, select {
   font-family: inherit;
   font-size: inherit;
   border: none;
@@ -94,7 +94,7 @@ input, textarea {
 
 ::selection {
   background: var(--c-gold);
-  color: var(--c-dusk);
+  color: var(--c-ink);
 }
 
 :focus-visible {
@@ -108,11 +108,10 @@ input, textarea {
   left: var(--space-md);
   z-index: var(--z-modal);
   padding: var(--space-sm) var(--space-md);
-  background: var(--c-surface);
-  color: var(--c-text-head);
+  background: var(--c-charcoal);
+  color: var(--c-ivory);
   font-family: var(--font-body);
   font-size: var(--fs-sm);
-  border: 1px solid var(--c-border);
   border-radius: 0 0 4px 4px;
   transition: top var(--dur-fast) var(--ease-out);
 }
@@ -137,10 +136,10 @@ input, textarea {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--c-dusk);
+  background: var(--c-ivory);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--c-border);
+  background: var(--c-dusk);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
