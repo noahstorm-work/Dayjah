@@ -94,7 +94,7 @@ input, textarea, select {
 
 ::selection {
   background: var(--c-gold);
-  color: var(--c-ink);
+  color: var(--c-dusk);
 }
 
 :focus-visible {
@@ -108,10 +108,11 @@ input, textarea, select {
   left: var(--space-md);
   z-index: var(--z-modal);
   padding: var(--space-sm) var(--space-md);
-  background: var(--c-charcoal);
-  color: var(--c-ivory);
+  background: var(--c-surface);
+  color: var(--c-text-head);
   font-family: var(--font-body);
   font-size: var(--fs-sm);
+  border: 1px solid var(--c-border);
   border-radius: 0 0 4px 4px;
   transition: top var(--dur-fast) var(--ease-out);
 }
@@ -136,10 +137,10 @@ input, textarea, select {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--c-ivory);
+  background: var(--c-dusk);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--c-dusk);
+  background: var(--c-border);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
