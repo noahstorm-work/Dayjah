@@ -22,6 +22,7 @@ const Transitions = {
   afterTransition(fromId, toId) {
     document.body.style.backgroundColor = this.getRoomBg(toId);
     Navigation.updateActive(toId);
+    if (fromId !== 'home') Navigation.show();
     Store.set('isTransitioning', false);
     this.manageFocus(toId);
   },

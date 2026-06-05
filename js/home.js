@@ -41,6 +41,7 @@ const Home = {
       ctaGroup.addEventListener('click', (e) => {
         const btn = e.target.closest('.home__cta');
         if (btn && btn.dataset.room) {
+          Navigation.show();
           Router.goTo(btn.dataset.room);
         }
       });
@@ -50,6 +51,7 @@ const Home = {
     document.querySelectorAll('.home-section__cta').forEach(btn => {
       btn.addEventListener('click', () => {
         if (btn.dataset.room) {
+          Navigation.show();
           Router.goTo(btn.dataset.room);
         }
       });
