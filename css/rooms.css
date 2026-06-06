@@ -47,7 +47,7 @@
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0.22em;
-  color: var(--c-text-head);
+  color: var(--c-gold);
   opacity: 0;
   transform: translateY(20px);
   transition: none;
