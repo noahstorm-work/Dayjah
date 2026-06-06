@@ -18,8 +18,8 @@
   animation: fadeUpReveal var(--dur-med) var(--ease-out) 1.8s both;
 }
 
-.home__sofa.reveal {
-  animation: fadeIn var(--dur-slow) var(--ease-out) 2.5s both;
+.home-art-strip.reveal {
+  animation: fadeUpReveal var(--dur-slow) var(--ease-out) 2.2s both;
 }
 
 @keyframes wordmarkReveal {
@@ -74,7 +74,7 @@
   .home__spine.reveal,
   .home__subtitle.reveal,
   .home__cta-group.reveal,
-  .home__sofa.reveal {
+  .home-art-strip.reveal {
     opacity: 1;
     transform: none;
   }

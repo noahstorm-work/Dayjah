@@ -6,6 +6,7 @@ const Home = {
     const spine = document.querySelector('.home__spine');
     const subtitle = document.querySelector('.home__subtitle');
     const ctaGroup = document.querySelector('.home__cta-group');
+    const artStrip = document.querySelector('.home-art-strip');
     const home = document.querySelector('[data-room="home"]');
 
     if (!wordmark) return;
@@ -21,6 +22,7 @@ const Home = {
         spine.classList.add('reveal');
         subtitle.classList.add('reveal');
         ctaGroup.classList.add('reveal');
+        if (artStrip) artStrip.classList.add('reveal');
         return;
       }
 
@@ -28,6 +30,7 @@ const Home = {
       setTimeout(() => spine.classList.add('reveal'), 600);
       setTimeout(() => subtitle.classList.add('reveal'), 1200);
       setTimeout(() => ctaGroup.classList.add('reveal'), 1800);
+      if (artStrip) setTimeout(() => artStrip.classList.add('reveal'), 2200);
     };
 
     if (!reducedMotion) {
@@ -43,6 +46,17 @@ const Home = {
         if (btn && btn.dataset.room) {
           Navigation.show();
           Router.goTo(btn.dataset.room);
+        }
+      });
+    }
+
+    // Art strip click -> gallery
+    if (artStrip) {
+      artStrip.addEventListener('click', (e) => {
+        const item = e.target.closest('.home-art-strip__item');
+        if (item && item.dataset.room) {
+          Navigation.show();
+          Router.goTo(item.dataset.room);
         }
       });
     }

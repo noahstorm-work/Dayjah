@@ -130,19 +130,68 @@
   box-shadow: 0 4px 24px color-mix(in srgb, var(--c-gold) 25%, transparent);
 }
 
-.home__sofa {
-  position: absolute;
-  bottom: var(--space-3xl);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--c-gold), transparent);
-  border-radius: 2px;
+/* ---- Art preview strip ---- */
+
+.home-art-strip {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-4xl);
+  padding: 0 var(--pad-desktop);
+  position: relative;
+  z-index: 1;
   opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-out);
 }
 
-.home__sofa.reveal { opacity: 0.5; }
+.home-art-strip.reveal { opacity: 1; }
+
+.home-art-strip__item {
+  width: 200px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 2px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+}
+
+.home-art-strip__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  filter: saturate(0.7);
+  transition: all var(--dur-med) var(--ease-out);
+}
+
+.home-art-strip__item:hover img,
+.home-art-strip__item:focus-visible img {
+  opacity: 1;
+  filter: saturate(1);
+  transform: scale(1.03);
+}
+
+.home-art-strip__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid color-mix(in srgb, var(--c-gold) 0%, transparent);
+  transition: border-color var(--dur-fast) var(--ease-out);
+  pointer-events: none;
+}
+
+.home-art-strip__item:hover::after,
+.home-art-strip__item:focus-visible::after {
+  border-color: color-mix(in srgb, var(--c-gold) 30%, transparent);
+}
+
+@media (max-width: 767px) {
+  .home-art-strip { gap: var(--space-sm); padding: 0 var(--pad-mobile); }
+  .home-art-strip__item { width: 120px; height: 90px; }
+}
 
 /* ---- Home sections below hero ---- */
 
