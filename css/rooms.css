@@ -383,63 +383,28 @@
    ============================================= */
 
 .room--sanctuary {
-  background: color-mix(in srgb, var(--c-dusk), var(--c-night));
+  background: var(--c-dusk);
 }
 
 .room--sanctuary .room__inner {
   justify-content: center;
   align-items: center;
-  text-align: center;
+  padding: 0;
+  max-width: none;
 }
 
-.sanctuary__title {
-  font-family: var(--font-display);
-  font-size: var(--fs-2xl);
-  font-weight: var(--fw-light);
-  font-style: italic;
-  color: var(--c-text-head);
-  margin-bottom: var(--space-md);
-}
-
-.sanctuary__subtitle {
-  font-family: var(--font-body);
-  font-size: var(--fs-sm);
-  color: var(--c-cream);
-  max-width: 480px;
-  line-height: var(--lh-loose);
-  margin-bottom: var(--space-4xl);
-}
-
-.sanctuary__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-xl);
-  max-width: var(--content-max);
+.sanctuary__image-wrap {
   width: 100%;
-}
-
-.sanctuary__item {
-  position: relative;
+  max-width: 900px;
   border-radius: 4px;
   overflow: hidden;
-  background: var(--c-surface);
-  aspect-ratio: 4 / 3;
 }
 
-.sanctuary__item img {
+.sanctuary__image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.sanctuary__item--wide {
-  grid-column: span 2;
-  aspect-ratio: 21 / 9;
-}
-
-@media (max-width: 767px) {
-  .sanctuary__grid { grid-template-columns: 1fr; }
-  .sanctuary__item--wide { grid-column: span 1; aspect-ratio: 4 / 3; }
+  height: auto;
+  display: block;
+  opacity: 0.85;
 }
 
 /* =============================================
