@@ -84,7 +84,7 @@
   opacity: 0;
   transition: opacity var(--dur-slow) var(--ease-out);
   letter-spacing: 0.08em;
-  max-width: 480px;
+  max-width: 540px;
   line-height: var(--lh-loose);
 }
 
