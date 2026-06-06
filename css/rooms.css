@@ -42,16 +42,18 @@
 }
 
 .home__wordmark {
-  font-family: var(--font-display);
+  font-family: var(--font-logo);
   font-size: var(--fs-4xl);
-  font-weight: var(--fw-light);
-  font-style: italic;
-  letter-spacing: 0.15em;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.22em;
   color: var(--c-text-head);
   opacity: 0;
   transform: translateY(20px);
   transition: none;
   text-shadow: 0 0 60px color-mix(in srgb, var(--c-gold) 15%, transparent);
+  font-variant-ligatures: common-ligatures;
+  font-feature-settings: 'liga' 1, 'kern' 1, 'calt' 1;
 }
 
 .home__wordmark.reveal {
