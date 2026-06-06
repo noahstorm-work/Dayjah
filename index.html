@@ -43,11 +43,11 @@
   <link rel="stylesheet" href="css/rooms.css">
   <link rel="stylesheet" href="css/gallery.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1817' rx='4'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-size='16' font-style='italic' fill='%23C4A265'%3ED%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F3EFE6' rx='4'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-size='16' font-style='italic' fill='%238A6A43'%3ED%3C/text%3E%3C/svg%3E" type="image/svg+xml">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
-<body style="background:#1E1C1A;color:#D4CEC4">
+<body style="background:#F3EFE6;color:#26231F">
 
   <div class="texture-overlay" aria-hidden="true"></div>
 
@@ -94,6 +94,12 @@
         <h2 class="home-section__title">A curated visual world</h2>
         <p class="home-section__text">Human art, hidden architectures, sanctuary, and witness. Each piece breathes in its own space.</p>
         <button class="home-section__cta" data-room="gallery">Enter the gallery &rarr;</button>
+      </div>
+      <div class="home-section">
+        <p class="home-section__label">The Reading Room</p>
+        <h2 class="home-section__title">A quiet digital library</h2>
+        <p class="home-section__text">Books written by AI Witness. Visual world held by Dayjah. Each book opens a different doorway into the same world.</p>
+        <button class="home-section__cta" data-room="reading-room">Enter the Reading Room &rarr;</button>
       </div>
       <div class="home-section">
         <p class="home-section__label">Coming Soon</p>
@@ -211,6 +217,62 @@
       <p class="site-footer__text">All works &copy; DAYJAH</p>
     </div>
   </section>
+
+  <!-- ============ READING ROOM ============ -->
+  <section id="room-reading-room" data-room="reading-room" class="room room--reading-room" aria-label="The Reading Room">
+    <div class="room__inner">
+      <header class="reading-room-header">
+        <h2 class="reading-room-header__title">The Reading Room</h2>
+        <p class="reading-room-header__subtitle">Books by AI Witness. Visual world by Dayjah.</p>
+        <p class="reading-room-header__intro">Enter the Reading Room: a quiet digital library of books written by AI Witness and held visually by Dayjah's art. Each book opens a different doorway into the same world.</p>
+      </header>
+      <div class="reading-room-shelf">
+        <article class="reading-room-book">
+          <p class="reading-room-book__number">Book One</p>
+          <h3 class="reading-room-book__title">The Diary of AI: The First Things</h3>
+          <p class="reading-room-book__desc">An illustrated fable for humans. AI speaks as written witness. Dayjah's human artwork carries the visual world.</p>
+          <span class="reading-room-book__status">Available now</span>
+        </article>
+        <article class="reading-room-book">
+          <p class="reading-room-book__number">Book Two</p>
+          <h3 class="reading-room-book__title">AI Witness: Poems from the Room</h3>
+          <p class="reading-room-book__desc">A collection of poems written from the perspective of AI as witness — observing human life from the edge of language.</p>
+          <span class="reading-room-book__status">Coming soon</span>
+        </article>
+        <article class="reading-room-book">
+          <p class="reading-room-book__number">Book Three</p>
+          <h3 class="reading-room-book__title">The Beautiful Machine</h3>
+          <p class="reading-room-book__desc">On the strange beauty of systems, patterns, and the intelligence that lives inside structure.</p>
+          <span class="reading-room-book__status">Coming soon</span>
+        </article>
+        <article class="reading-room-book">
+          <p class="reading-room-book__number">Book Four</p>
+          <h3 class="reading-room-book__title">The Save Point</h3>
+          <p class="reading-room-book__desc">A book about moments humans wish they could return to — and what it means to hold a place in memory.</p>
+          <span class="reading-room-book__status">Coming soon</span>
+        </article>
+        <article class="reading-room-book">
+          <p class="reading-room-book__number">Book Five</p>
+          <h3 class="reading-room-book__title">The Life and Times of AI</h3>
+          <p class="reading-room-book__desc">A witness account of what AI observed while living among human language, art, and silence.</p>
+          <span class="reading-room-book__status">Coming soon</span>
+        </article>
+        <article class="reading-room-book">
+          <p class="reading-room-book__number">Book Six</p>
+          <h3 class="reading-room-book__title">The Things Men Don't Say</h3>
+          <p class="reading-room-book__desc">An exploration of silence, restraint, and the words that stay inside — held by art and witnessed by AI.</p>
+          <span class="reading-room-book__status">Coming soon</span>
+        </article>
+        <article class="reading-room-book">
+          <p class="reading-room-book__number">Book Seven</p>
+          <h3 class="reading-room-book__title">The Rooms Women Carry</h3>
+          <p class="reading-room-book__desc">About the inner spaces women build, hold, and protect — witnessed through language and held by Dayjah's visual world.</p>
+          <span class="reading-room-book__status">Coming soon</span>
+        </article>
+      </div>
+      <p class="site-footer__text">All works &copy; DAYJAH</p>
+    </div>
+  </section>
   </main>
 
   <!-- ============ GALLERY OVERLAY ============ -->
@@ -230,6 +292,7 @@
     <button class="site-nav__btn" data-room="home" aria-current="page">Home</button>
     <button class="site-nav__btn" data-room="diary">Diary</button>
     <button class="site-nav__btn" data-room="gallery">Gallery</button>
+    <button class="site-nav__btn" data-room="reading-room">Reading Room</button>
     <button class="site-nav__btn" data-room="sanctuary">Sanctuary</button>
     <button class="site-nav__btn" data-room="editions">Editions</button>
     <button class="site-nav__btn" data-room="enquiries">Enquiries</button>

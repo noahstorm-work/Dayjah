@@ -32,6 +32,7 @@ const Transitions = {
       home: 'var(--c-body)',
       diary: 'var(--c-body)',
       gallery: 'var(--c-body)',
+      'reading-room': 'var(--c-bone)',
       sanctuary: 'var(--c-body)',
       editions: 'var(--c-body)',
       enquiries: 'var(--c-body)'

@@ -5,7 +5,7 @@ const Store = {
     isTransitioning: false,
     galleryOpen: false,
     galleryData: null,
-    rooms: ['home', 'diary', 'gallery', 'sanctuary', 'editions', 'enquiries']
+    rooms: ['home', 'diary', 'gallery', 'reading-room', 'sanctuary', 'editions', 'enquiries']
   },
 
   get(key) {

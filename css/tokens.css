@@ -1,20 +1,26 @@
 :root {
-  /* ---- Core Palette: warm, dark, atmospheric, artistic ---- */
-  --c-dusk:       #1A1817;  /* warm off-black — main backgrounds */
-  --c-charcoal:   #2A2825;  /* deep charcoal — dark surfaces */
-  --c-night:      #1E2428;  /* rain-dark blue/black — atmospheric depth */
-  --c-cream:      #C9BFA8;  /* aged cream — secondary text */
-  --c-gold:       #C4A265;  /* soft amber/gold — primary accent */
-  --c-gold-light: #D4BC8A;  /* lighter gold — hover, highlight */
-  --c-bronze:     #8B7D5E;  /* oxidised bronze — subtle accent */
-  --c-moss:       #5A6B4F;  /* moss/olive — garden accent */
-  --c-stone:      #8A847A;  /* stone grey — muted text */
-  --c-text:       #D4CEC4;  /* warm light grey — body text on dark */
-  --c-text-head:  #EDE8DF;  /* heading text on dark backgrounds */
-  --c-surface:    #2A2724;  /* dark surface — cards, panels */
-  --c-surface-lt: #35312E;  /* lighter dark surface */
-  --c-border:     #3A3632;  /* dark border */
-  --c-body:       #1E1C1A;  /* page body background */
+  /* ---- Core Palette: soft ivory, warm bone, charcoal text ---- */
+  --c-ivory:       #F3EFE6;  /* main soft ivory background */
+  --c-bone:        #EEE8DC;  /* warm bone — panels, cards */
+  --c-stone:       #C9BFA8;  /* aged stone — secondary text */
+  --c-charcoal:    #26231F;  /* charcoal — main text */
+  --c-heading:     #1F1D1A;  /* dark heading text */
+  --c-secondary:   #2B2925;  /* secondary text */
+  --c-bronze:      #8A6A43;  /* muted bronze accent */
+  --c-gold:        #8A6A43;  /* bronze accent as gold */
+  --c-gold-light:  #A07D52;  /* lighter bronze — hover */
+  --c-border:      #D8D0C4;  /* warm border */
+  --c-surface:     #E8E2D6;  /* surface for cards */
+  --c-body:        #F3EFE6;  /* page body background */
+
+  /* Legacy aliases for existing CSS */
+  --c-dusk:        #F3EFE6;
+  --c-text:        #26231F;
+  --c-text-head:   #1F1D1A;
+  --c-cream:       #2B2925;
+  --c-moss:        #5A6B4F;
+  --c-night:       #1E2428;
+  --c-surface-lt:  #EDE8DF;
 
   /* ---- Typography ---- */
   --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
