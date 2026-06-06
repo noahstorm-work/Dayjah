@@ -70,7 +70,7 @@
   font-size: var(--fs-md);
   font-weight: var(--fw-light);
   font-style: italic;
-  color: var(--c-gold);
+  color: var(--c-cream);
   margin-top: var(--space-xl);
   opacity: 0;
   transition: opacity var(--dur-slow) var(--ease-out);
