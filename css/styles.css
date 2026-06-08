@@ -499,7 +499,6 @@ h1:focus-visible, h2:focus-visible, h3:focus-visible {
 
 .room--diary {
   background: var(--c-ivory);
-  position: relative;
 }
 
 .room--diary::before {
@@ -702,7 +701,6 @@ h1:focus-visible, h2:focus-visible, h3:focus-visible {
 
 .room--sanctuary {
   background: var(--c-ivory);
-  position: relative;
 }
 
 .room--sanctuary::before {
@@ -799,7 +797,6 @@ h1:focus-visible, h2:focus-visible, h3:focus-visible {
 
 .room--reading-room {
   background: var(--c-bone);
-  position: relative;
 }
 
 .room--reading-room::before {
@@ -931,7 +928,6 @@ h1:focus-visible, h2:focus-visible, h3:focus-visible {
 .room--editions {
   background: var(--c-ivory);
   color: var(--c-text);
-  position: relative;
 }
 
 .room--editions::before {
@@ -1046,7 +1042,6 @@ h1:focus-visible, h2:focus-visible, h3:focus-visible {
 
 .room--enquiries {
   background: var(--c-ivory);
-  position: relative;
 }
 
 .room--enquiries::before {
