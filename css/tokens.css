@@ -1,26 +1,20 @@
 :root {
-  /* ---- Core Palette: soft ivory, warm bone, charcoal text ---- */
-  --c-ivory:       #F3EFE6;  /* main soft ivory background */
-  --c-bone:        #EEE8DC;  /* warm bone — panels, cards */
-  --c-stone:       #C9BFA8;  /* aged stone — secondary text */
-  --c-charcoal:    #26231F;  /* charcoal — main text */
-  --c-heading:     #1F1D1A;  /* dark heading text */
-  --c-secondary:   #2B2925;  /* secondary text */
-  --c-bronze:      #8A6A43;  /* muted bronze accent */
-  --c-gold:        #8A6A43;  /* bronze accent as gold */
-  --c-gold-light:  #A07D52;  /* lighter bronze — hover */
-  --c-border:      #D8D0C4;  /* warm border */
-  --c-surface:     #E8E2D6;  /* surface for cards */
-  --c-body:        #F3EFE6;  /* page body background */
+  /* ---- Core Palette: dark, bone, stone, graphite, silver ---- */
+  --c-ivory:       #1A1817;  /* main dark background */
+  --c-bone:        #242220;  /* warm dark — panels, cards */
+  --c-stone:       #8A847A;  /* stone — secondary text, muted */
+  --c-charcoal:    #E8E0D6;  /* bone — main text */
+  --c-heading:     #F3EFE6;  /* light ivory heading text */
+  --c-secondary:   #C9BFA8;  /* secondary text */
+  --c-bronze:      #8A847A;  /* stone accent */
+  --c-gold:        #8A847A;  /* alias */
+  --c-gold-light:  #A09888;  /* lighter stone — hover */
+  --c-border:      #3A3632;  /* warm dark border */
+  --c-surface:     #2E2B28;  /* surface for cards */
+  --c-body:        #1A1817;  /* page body background */
 
-  /* Legacy aliases for existing CSS */
-  --c-dusk:        #F3EFE6;
-  --c-text:        #26231F;
-  --c-text-head:   #1F1D1A;
-  --c-cream:       #2B2925;
-  --c-moss:        #5A6B4F;
-  --c-night:       #1E2428;
-  --c-surface-lt:  #EDE8DF;
+  /* Alias */
+  --c-text:        #E8E0D6;
 
   /* ---- Typography ---- */
   --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -81,4 +75,7 @@
   --z-nav: 100;
   --z-overlay: 200;
   --z-modal: 300;
+
+  /* ---- Texture ---- */
+  --texture-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }

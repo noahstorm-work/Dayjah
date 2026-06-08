@@ -8,12 +8,16 @@ module.exports = defineConfig({
   workers: 3,
   reporter: [
     ['list'],
-    ['html', { outputFolder: 'test-results/report' }]
+    ['html', { outputFolder: 'playwright-report' }]
   ],
   use: {
-    baseURL: 'https://dayjah.co.uk',
+    baseURL: 'http://localhost:3000',
     trace: 'on-first-retry',
-    screenshot: 'only-on-failure',
+  },
+  webServer: {
+    command: 'npx serve . -l 3000 --no-clipboard',
+    port: 3000,
+    reuseExistingServer: true,
   },
   projects: [
     {
@@ -24,7 +28,7 @@ module.exports = defineConfig({
       name: 'mobile',
       use: {
         ...devices['iPhone 13'],
-        baseURL: 'https://dayjah.co.uk',
+        baseURL: 'http://localhost:3000',
       },
     },
   ],

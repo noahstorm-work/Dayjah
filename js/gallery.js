@@ -1,11 +1,22 @@
 const Gallery = {
   data: Array.from({ length: 36 }, (_, i) => {
     const n = String(i + 1).padStart(2, '0');
+    const titles = [
+      'Fractured Presence', 'Hidden Architecture', 'Witness Signal', 'Stone Memory',
+      'Sanctuary Light', 'Inner Circuit', 'Silent Pattern', 'Breath Structure',
+      'Shadow Atlas', 'Threshold', 'Memory Surface', 'Living Archive',
+      'Signal Path', 'Deep Root', 'Weather Bone', 'Still Current',
+      'Ghost Thread', 'Warm Geometry', 'Edge Language', 'Ground Signal',
+      'Quiet Force', 'Skin Map', 'Dust Pattern', 'Light Fracture',
+      'Iron Whisper', 'Salt Memory', 'Clay Voice', 'Ash Signal',
+      'Ember Thread', 'Root Atlas', 'Stone Breath', 'Dark Bloom',
+      'Still Circuit', 'Warm Archive', 'Shadow Threshold', 'Inner Weather'
+    ];
     return {
-      title: `Gallery ${n}`,
+      title: titles[i] || `Gallery ${n}`,
       meta: 'Digital work, 2026',
       src: `assets/images/gallery/gallery-${n}.webp`,
-      alt: 'Abstract digital artwork in warm earth tones'
+      alt: `${titles[i] || 'Artwork'} — digital artwork by Dayjah`
     };
   }),
 
@@ -14,6 +25,7 @@ const Gallery = {
   titleEl: null,
   metaEl: null,
   closeBtn: null,
+  triggerItem: null,
 
   init() {
     this.overlay = document.getElementById('gallery-overlay');
@@ -35,6 +47,17 @@ const Gallery = {
         if (item) this.open(item);
       });
 
+      // Keyboard activation for gallery items
+      grid.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          const item = e.target.closest('.gallery-item');
+          if (item) {
+            e.preventDefault();
+            this.open(item);
+          }
+        }
+      });
+
       grid.addEventListener('contextmenu', (e) => {
         if (e.target.closest('.gallery-item')) e.preventDefault();
       });
@@ -46,6 +69,10 @@ const Gallery = {
     });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && Store.get('galleryOpen')) this.close();
+      // Focus trap
+      if (Store.get('galleryOpen') && e.key === 'Tab') {
+        this.trapFocus(e);
+      }
     });
   },
 
@@ -88,6 +115,9 @@ const Gallery = {
     const meta = item.dataset.meta || '';
     if (!src) return;
 
+    // Store trigger for focus restore
+    this.triggerItem = item;
+
     Store.set('galleryOpen', true);
     if (this.image) {
       this.image.src = src;
@@ -106,5 +136,27 @@ const Gallery = {
     Store.set('galleryOpen', false);
     this.overlay.classList.remove('open');
     document.body.style.overflow = '';
+    // Restore focus to triggering item
+    if (this.triggerItem) {
+      this.triggerItem.focus();
+      this.triggerItem = null;
+    }
+  },
+
+  trapFocus(e) {
+    const focusable = this.overlay.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   }
 };

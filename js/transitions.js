@@ -1,30 +1,19 @@
 const Transitions = {
   switchRoom(fromId, toId) {
-    if (Store.get('isTransitioning')) return;
-    Store.set('isTransitioning', true);
+    try {
+      const from = document.querySelector(`[data-room="${fromId}"]`);
+      const to = document.querySelector(`[data-room="${toId}"]`);
+      if (!from || !to) return;
 
-    const from = document.querySelector(`[data-room="${fromId}"]`);
-    const to = document.querySelector(`[data-room="${toId}"]`);
-    if (!from || !to) {
-      Store.set('isTransitioning', false);
-      return;
-    }
-
-    from.classList.remove('active');
-    const duration = ReducedMotion.prefersReduced ? 0 : 600;
-
-    setTimeout(() => {
+      from.classList.remove('active');
       to.classList.add('active');
-      this.afterTransition(fromId, toId);
-    }, duration + 50);
-  },
 
-  afterTransition(fromId, toId) {
-    document.body.style.backgroundColor = this.getRoomBg(toId);
-    Navigation.updateActive(toId);
-    if (fromId !== 'home') Navigation.show();
-    Store.set('isTransitioning', false);
-    this.manageFocus(toId);
+      document.body.style.backgroundColor = this.getRoomBg(toId);
+      Navigation.updateActive(toId);
+      this.manageFocus(toId);
+    } catch(e) {
+      console.error('switchRoom error:', e);
+    }
   },
 
   getRoomBg(roomId) {
@@ -45,8 +34,7 @@ const Transitions = {
     if (room) {
       const heading = room.querySelector('h2') || room.querySelector('h1');
       if (heading) {
-        heading.setAttribute('tabindex', '-1');
-        heading.focus({ preventScroll: true });
+        try { heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); } catch(e) {}
       }
     }
   }

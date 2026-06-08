@@ -8,7 +8,6 @@ const Router = {
   },
 
   goTo(roomId, isPop = false) {
-    if (Store.get('isTransitioning')) return;
     if (Store.get('currentRoom') === roomId) return;
     if (!Store.get('rooms').includes(roomId)) return;
 

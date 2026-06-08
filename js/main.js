@@ -116,21 +116,10 @@
   /* ---- Init ---- */
   document.addEventListener('DOMContentLoaded', () => {
     initReducedMotion();
-    Router.init();
-    Navigation.init();
-    Gallery.init();
-    Home.init();
-    Diary.init();
-    initDiaryNav();
-
-    const hash = window.location.hash.slice(1);
-    if (hash && Store.get('rooms').includes(hash) && hash !== 'home') {
-      Navigation.show();
-      setTimeout(() => Router.goTo(hash, true), 50);
-    } else {
-      Store.set('currentRoom', 'home');
-      document.querySelector('[data-room="home"]')?.classList.add('active');
-    }
+    try { Gallery.init(); } catch(e) { console.error('Gallery.init:', e); }
+    try { Home.init(); } catch(e) { console.error('Home.init:', e); }
+    try { Diary.init(); } catch(e) { console.error('Diary.init:', e); }
+    try { initDiaryNav(); } catch(e) { console.error('initDiaryNav:', e); }
 
     document.querySelector('.enquiries__form')?.addEventListener('submit', handleEnquiriesForm);
     document.querySelector('.editions__form')?.addEventListener('submit', handleEditionsForm);

@@ -14,12 +14,12 @@
   animation: fadeUpReveal var(--dur-slow) var(--ease-out) 1.2s both;
 }
 
-.home__cta-group.reveal {
-  animation: fadeUpReveal var(--dur-med) var(--ease-out) 1.8s both;
+.home__sanctuary-law.reveal {
+  animation: fadeUpReveal var(--dur-slow) var(--ease-out) 1.8s both;
 }
 
-.home-art-strip.reveal {
-  animation: fadeUpReveal var(--dur-slow) var(--ease-out) 2.2s both;
+.home__cta-group.reveal {
+  animation: fadeUpReveal var(--dur-med) var(--ease-out) 2.4s both;
 }
 
 @keyframes wordmarkReveal {
@@ -73,8 +73,8 @@
 
   .home__spine.reveal,
   .home__subtitle.reveal,
-  .home__cta-group.reveal,
-  .home-art-strip.reveal {
+  .home__sanctuary-law.reveal,
+  .home__cta-group.reveal {
     opacity: 1;
     transform: none;
   }

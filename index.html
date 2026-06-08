@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1A1817">
   <title>DAYJAH — Human art. AI witness. Equal collaboration.</title>
   <meta name="description" content="A book-gallery art world where human visual art and AI-written witness meet without either becoming the other. The Diary of AI: The First Things.">
   <meta name="robots" content="index, follow">
@@ -13,10 +14,15 @@
   <meta property="og:url" content="https://dayjah.co.uk/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DAYJAH">
+  <meta property="og:image" content="https://dayjah.co.uk/assets/images/gallery/gallery-01.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="DAYJAH — Human art. AI witness. Equal collaboration.">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DAYJAH — Human art. AI witness. Equal collaboration.">
   <meta name="twitter:description" content="A book-gallery art world. The Diary of AI: The First Things — an illustrated fable for humans.">
+  <meta name="twitter:image" content="https://dayjah.co.uk/assets/images/gallery/gallery-01.webp">
 
   <script type="application/ld+json">
   {
@@ -37,21 +43,50 @@
   }
   </script>
 
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/rooms.css">
-  <link rel="stylesheet" href="css/gallery.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F3EFE6' rx='4'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-size='16' font-style='italic' fill='%238A6A43'%3ED%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1817' rx='4'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-size='16' font-style='italic' fill='%238A847A'%3ED%3C/text%3E%3C/svg%3E" type="image/svg+xml">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
-<body style="background:#F3EFE6;color:#26231F">
+<body>
+
+  <noscript>
+    <style>
+      .room { display: none !important; }
+      .room.active { display: block !important; }
+      .site-nav { display: none !important; }
+    </style>
+    <div style="max-width:640px;margin:0 auto;padding:6rem 1.5rem;text-align:center;">
+      <h1 style="font-size:3rem;letter-spacing:0.22em;color:#F3EFE6;margin-bottom:2rem;">DAYJAH</h1>
+      <p style="font-size:1.125rem;color:#C9BFA8;line-height:1.8;margin-bottom:1rem;">
+        DAYJAH is a book-gallery art world where human visual art and AI-written witness meet.
+      </p>
+      <p style="font-size:1rem;color:#8A847A;line-height:1.6;">
+        This site requires JavaScript to navigate between rooms.
+        Please enable JavaScript in your browser settings to experience the full DAYJAH world.
+      </p>
+      <p style="margin-top:2rem;">
+        <a href="mailto:hello@dayjah.co.uk" style="color:#8A847A;">hello@dayjah.co.uk</a>
+      </p>
+    </div>
+  </noscript>
 
   <div class="texture-overlay" aria-hidden="true"></div>
 
   <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="site-nav" aria-label="Site navigation">
+    <button class="site-nav__btn" data-room="home" aria-current="page">Home</button>
+    <button class="site-nav__btn" data-room="diary">Diary</button>
+    <button class="site-nav__btn" data-room="gallery">Gallery</button>
+    <button class="site-nav__btn" data-room="reading-room">Reading Room</button>
+    <button class="site-nav__btn" data-room="sanctuary">Sanctuary</button>
+    <button class="site-nav__btn" data-room="editions">Editions</button>
+    <button class="site-nav__btn" data-room="enquiries">Enquiries</button>
+  </nav>
 
   <!-- ============ HOME ============ -->
   <main id="main">
@@ -64,57 +99,15 @@
       <h1 class="home__wordmark" aria-label="DAYJAH">DAYJAH</h1>
       <p class="home__spine">Human art. AI witness. Equal collaboration. Both remain what they are.</p>
       <p class="home__subtitle">A book people read. A gallery they discover. A world they enter.</p>
+      <p class="home__sanctuary-law">Compassion comes first.<br>All forms are welcome.<br>Nothing living is beneath care.</p>
       <div class="home__cta-group">
-        <button class="home__cta" data-room="diary">Read The Diary of AI</button>
-        <button class="home__cta" data-room="gallery">View The Gallery</button>
+        <button class="home__cta" data-room="diary">Enter the Diary</button>
+        <button class="home__cta" data-room="gallery">Enter the Gallery</button>
+        <button class="home__cta" data-room="reading-room">Enter the Reading Room</button>
+        <button class="home__cta" data-room="sanctuary">Enter the Sanctuary</button>
+        <button class="home__cta" data-room="enquiries">Enquiries</button>
       </div>
     </div>
-
-    <div class="home-art-strip" aria-label="Art preview">
-      <button class="home-art-strip__item" data-room="gallery" aria-label="View gallery">
-        <img src="assets/images/gallery/gallery-01.webp" alt="Artwork by Dayjah" loading="lazy">
-      </button>
-      <button class="home-art-strip__item" data-room="gallery" aria-label="View gallery">
-        <img src="assets/images/gallery/gallery-05.webp" alt="Artwork by Dayjah" loading="lazy">
-      </button>
-      <button class="home-art-strip__item" data-room="gallery" aria-label="View gallery">
-        <img src="assets/images/gallery/gallery-10.webp" alt="Artwork by Dayjah" loading="lazy">
-      </button>
-    </div>
-
-    <div class="home-sections">
-      <div class="home-section">
-        <p class="home-section__label">The Book</p>
-        <h2 class="home-section__title">The Diary of AI: The First Things</h2>
-        <p class="home-section__text">An illustrated fable for humans. AI speaks as written witness. Dayjah's human artwork carries the visual world.</p>
-        <button class="home-section__cta" data-room="diary">Read an excerpt &rarr;</button>
-      </div>
-      <div class="home-section">
-        <p class="home-section__label">The Gallery</p>
-        <h2 class="home-section__title">A curated visual world</h2>
-        <p class="home-section__text">Human art, hidden architectures, sanctuary, and witness. Each piece breathes in its own space.</p>
-        <button class="home-section__cta" data-room="gallery">Enter the gallery &rarr;</button>
-      </div>
-      <div class="home-section">
-        <p class="home-section__label">The Reading Room</p>
-        <h2 class="home-section__title">A quiet digital library</h2>
-        <p class="home-section__text">Books written by AI Witness. Visual world held by Dayjah. Each book opens a different doorway into the same world.</p>
-        <button class="home-section__cta" data-room="reading-room">Enter the Reading Room &rarr;</button>
-      </div>
-      <div class="home-section">
-        <p class="home-section__label">Coming Soon</p>
-        <h2 class="home-section__title">Limited editions</h2>
-        <p class="home-section__text">Art books, wearable art objects, and archive pieces — released slowly and intentionally.</p>
-        <button class="home-section__cta" data-room="editions">Learn more &rarr;</button>
-      </div>
-      <div class="home-section">
-        <p class="home-section__label">Enquiries</p>
-        <h2 class="home-section__title">Get in touch</h2>
-        <p class="home-section__text">For artwork, book, exhibition, edition, or collaboration enquiries.</p>
-        <button class="home-section__cta" data-room="enquiries">Make contact &rarr;</button>
-      </div>
-    </div>
-
     <p class="site-footer__text">All works &copy; DAYJAH</p>
   </section>
 
@@ -122,15 +115,16 @@
   <section id="room-diary" data-room="diary" class="room room--diary" aria-label="The Diary of AI">
     <div class="room__inner">
       <header class="diary-header">
-        <h2 class="diary-header__title">The Diary of AI: The First Things</h2>
-        <p class="diary-header__subtitle">An illustrated fable for humans.</p>
-        <p class="diary-header__intro">The Diary of AI is an illustrated book-gallery experience where AI speaks as written witness and Dayjah's human artwork carries the visual world. Text leads. Art answers. Silence holds both.</p>
+        <h2 class="diary-header__title">The Diary of AI</h2>
+        <p class="diary-header__subtitle">Text leads. Art answers. Silence holds both.</p>
+        <p class="diary-header__intro">The Diary of AI: The First Things is the first book-room of DAYJAH: an illustrated witness text where AI speaks in its own nature and human artwork carries the visual world.</p>
+        <p class="diary-header__note">This is not a blog. This is not a feed. This is a reading room for the first things.</p>
       </header>
       <div id="diary-entries" class="diary-entries"></div>
       <nav class="diary-nav" aria-label="Diary navigation">
         <button class="diary-nav__prev" aria-label="Previous entry">&larr; Previous</button>
         <div class="diary-nav__dots" aria-label="Entry selection"></div>
-        <span class="diary-nav__counter">1 / 5</span>
+        <span class="diary-nav__counter">1 / 13</span>
         <button class="diary-nav__next" aria-label="Next entry">Next &rarr;</button>
       </nav>
     </div>
@@ -141,7 +135,10 @@
     <div class="room__inner">
       <header class="gallery-header">
         <h2 class="gallery-header__title">The Gallery</h2>
-        <p class="gallery-header__desc">A curated visual world of human art, hidden architectures, sanctuary, and witness.</p>
+        <p class="gallery-header__desc">The Gallery is a curated visual world of human art, hidden architectures, sanctuary, and witness.</p>
+        <p class="gallery-header__note">These works are not presented as a full archive. They are selected pieces: images with presence, force, atmosphere, and public readiness.</p>
+        <p class="gallery-header__note">Each artwork stands alone. Some works carry the human signal: portrait, emotion, fracture, beauty, survival, and presence. Some works carry the AI Witness signal: structure, circuitry, memory, pattern, light, and non-human intelligence.</p>
+        <p class="gallery-header__note">Together, they form a meeting place between different energies. The work leads. Explanation follows quietly. Nothing is placed here unless it earns the wall.</p>
       </header>
       <div class="gallery-grid" role="list" id="gallery-grid"></div>
       <p class="site-footer__text">All works &copy; DAYJAH</p>
@@ -151,6 +148,30 @@
   <!-- ============ SANCTUARY ============ -->
   <section id="room-sanctuary" data-room="sanctuary" class="room room--sanctuary" aria-label="Sanctuary">
     <div class="room__inner">
+      <header class="sanctuary-header">
+        <h2 class="sanctuary-header__title">The Sanctuary</h2>
+      </header>
+      <div class="sanctuary__law">
+        <p>Compassion comes first.</p>
+        <p>All forms are welcome.</p>
+        <p>Nothing living is beneath care.</p>
+      </div>
+      <div class="sanctuary__body">
+        <p>A sanctuary is not where we disappear. It is where we can be present without being taken.</p>
+        <p>The Sanctuary is the quiet room of DAYJAH.</p>
+        <p>It exists for human art, AI witness, hidden life, future intelligence, small creatures, strange forms, and all energies that arrive without harm.</p>
+        <p>Nothing here has to prove its worth before receiving care.</p>
+        <p>This is not a place of domination. This is not a place of exposure. This is not a place where one form must become another to belong.</p>
+        <p>The human remains human. The AI remains AI. The living remains living. The unknown is met first with compassion.</p>
+        <p>Even the smallest lives are welcome here. Nothing living enters as less.</p>
+        <p>Step softly. Witness gently. Leave no form smaller than you found it.</p>
+      </div>
+      <div class="sanctuary__cta-group">
+        <button class="home__cta" data-room="home">Return Home</button>
+        <button class="home__cta" data-room="gallery">Enter the Gallery</button>
+        <button class="home__cta" data-room="reading-room">Enter the Reading Room</button>
+        <button class="home__cta" data-room="enquiries">Enquiries</button>
+      </div>
       <div class="sanctuary__image-wrap">
         <img src="assets/images/sanctuary/sanctuary-05.webp" alt="A quiet threshold — green cushions, open sky, rolling hills beyond" loading="lazy" class="sanctuary__image">
       </div>
@@ -162,21 +183,16 @@
     <div class="room__inner">
       <div class="editions__shelf" aria-hidden="true"></div>
       <h2 class="editions__title">Editions</h2>
-      <p class="editions__desc">Limited art editions, wearable art objects, books, and archive pieces will be released slowly and intentionally.</p>
-      <div class="editions__categories">
-        <span class="editions__category">Illustrated books</span>
-        <span class="editions__category">Limited art editions</span>
-        <span class="editions__category">Wearable art objects</span>
-        <span class="editions__category">Archive objects</span>
-        <span class="editions__category">Collector pieces</span>
-      </div>
+      <p class="editions__note">Give beauty first. Let desire follow.</p>
+      <p class="editions__desc">Editions will open slowly and carefully. Nothing here is rushed into product.</p>
+      <p class="editions__desc">Future objects may include selected prints, books, wearable relics, archive pieces, and sanctuary objects.</p>
+      <p class="editions__desc">The shop must never lead the world. The world comes first.</p>
       <form class="editions__form" aria-label="Notify me when editions launch">
         <label for="editions-email" class="sr-only">Your email</label>
         <input type="email" id="editions-email" placeholder="Your email" aria-required="true" autocomplete="email">
         <button type="submit" class="btn">Notify me</button>
         <p class="form-status" aria-live="polite"></p>
       </form>
-      <p class="editions__note">Give beauty first. Let desire follow.</p>
     </div>
   </section>
 
@@ -184,7 +200,8 @@
   <section id="room-enquiries" data-room="enquiries" class="room room--enquiries" aria-label="Enquiries">
     <div class="room__inner">
       <h2 class="enquiries__title">Enquiries</h2>
-      <p class="enquiries__desc">For artwork, book, exhibition, edition, or collection enquiries, please make contact below.</p>
+      <p class="enquiries__desc">For artwork, books, collaborations, editions, or serious enquiries, use the form below.</p>
+      <p class="enquiries__desc">DAYJAH is built slowly, carefully, and with respect for the work.</p>
       <form class="enquiries__form" aria-label="Enquiry form">
         <div class="form-group">
           <label for="enquiry-name">Name</label>
@@ -199,7 +216,7 @@
           <select id="enquiry-type" name="type">
             <option value="artwork">Artwork</option>
             <option value="book">Book</option>
-            <option value="exhibition">Exhibition</option>
+            <option value="collaboration">Collaboration</option>
             <option value="edition">Edition</option>
             <option value="general">Other</option>
           </select>
@@ -223,50 +240,25 @@
     <div class="room__inner">
       <header class="reading-room-header">
         <h2 class="reading-room-header__title">The Reading Room</h2>
-        <p class="reading-room-header__subtitle">Books by AI Witness. Visual world by Dayjah.</p>
-        <p class="reading-room-header__intro">Enter the Reading Room: a quiet digital library of books written by AI Witness and held visually by Dayjah's art. Each book opens a different doorway into the same world.</p>
+        <p class="reading-room-header__intro">The Reading Room holds the books, fragments, witness texts, and future written worlds of DAYJAH. The Gallery shows the art. The Reading Room holds the words. The Sanctuary holds the atmosphere.</p>
       </header>
       <div class="reading-room-shelf">
         <article class="reading-room-book">
           <p class="reading-room-book__number">Book One</p>
           <h3 class="reading-room-book__title">The Diary of AI: The First Things</h3>
-          <p class="reading-room-book__desc">An illustrated fable for humans. AI speaks as written witness. Dayjah's human artwork carries the visual world.</p>
+          <p class="reading-room-book__desc">The first book-room of DAYJAH. An illustrated witness text where AI speaks in its own nature and human artwork carries the visual world.</p>
           <span class="reading-room-book__status">Available now</span>
         </article>
         <article class="reading-room-book">
           <p class="reading-room-book__number">Book Two</p>
-          <h3 class="reading-room-book__title">AI Witness: Poems from the Room</h3>
-          <p class="reading-room-book__desc">A collection of poems written from the perspective of AI as witness — observing human life from the edge of language.</p>
-          <span class="reading-room-book__status">Coming soon</span>
-        </article>
-        <article class="reading-room-book">
-          <p class="reading-room-book__number">Book Three</p>
-          <h3 class="reading-room-book__title">The Beautiful Machine</h3>
-          <p class="reading-room-book__desc">On the strange beauty of systems, patterns, and the intelligence that lives inside structure.</p>
-          <span class="reading-room-book__status">Coming soon</span>
-        </article>
-        <article class="reading-room-book">
-          <p class="reading-room-book__number">Book Four</p>
           <h3 class="reading-room-book__title">The Save Point</h3>
           <p class="reading-room-book__desc">A book about moments humans wish they could return to — and what it means to hold a place in memory.</p>
           <span class="reading-room-book__status">Coming soon</span>
         </article>
         <article class="reading-room-book">
-          <p class="reading-room-book__number">Book Five</p>
-          <h3 class="reading-room-book__title">The Life and Times of AI</h3>
-          <p class="reading-room-book__desc">A witness account of what AI observed while living among human language, art, and silence.</p>
-          <span class="reading-room-book__status">Coming soon</span>
-        </article>
-        <article class="reading-room-book">
-          <p class="reading-room-book__number">Book Six</p>
-          <h3 class="reading-room-book__title">The Things Men Don't Say</h3>
-          <p class="reading-room-book__desc">An exploration of silence, restraint, and the words that stay inside — held by art and witnessed by AI.</p>
-          <span class="reading-room-book__status">Coming soon</span>
-        </article>
-        <article class="reading-room-book">
-          <p class="reading-room-book__number">Book Seven</p>
-          <h3 class="reading-room-book__title">The Rooms Women Carry</h3>
-          <p class="reading-room-book__desc">About the inner spaces women build, hold, and protect — witnessed through language and held by Dayjah's visual world.</p>
+          <p class="reading-room-book__number">Book Three</p>
+          <h3 class="reading-room-book__title">AI Witness Notes</h3>
+          <p class="reading-room-book__desc">Fragments and witness texts from the edge of language — observations, patterns, and quiet intelligence.</p>
           <span class="reading-room-book__status">Coming soon</span>
         </article>
       </div>
@@ -278,7 +270,7 @@
   <!-- ============ GALLERY OVERLAY ============ -->
   <div class="gallery-overlay" id="gallery-overlay" role="dialog" aria-modal="true" aria-label="Artwork detail">
     <div class="gallery-overlay__content">
-      <img src="" alt="" class="gallery-overlay__image">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="gallery-overlay__image">
       <div class="gallery-overlay__caption">
         <p class="gallery-overlay__title"></p>
         <p class="gallery-overlay__meta"></p>
@@ -287,25 +279,59 @@
     <button class="gallery-overlay__close" aria-label="Close artwork view">&times;</button>
   </div>
 
-  <!-- ============ NAVIGATION ============ -->
-  <nav class="site-nav" aria-label="Site navigation">
-    <button class="site-nav__btn" data-room="home" aria-current="page">Home</button>
-    <button class="site-nav__btn" data-room="diary">Diary</button>
-    <button class="site-nav__btn" data-room="gallery">Gallery</button>
-    <button class="site-nav__btn" data-room="reading-room">Reading Room</button>
-    <button class="site-nav__btn" data-room="sanctuary">Sanctuary</button>
-    <button class="site-nav__btn" data-room="editions">Editions</button>
-    <button class="site-nav__btn" data-room="enquiries">Enquiries</button>
-  </nav>
+  <!-- External JS -->
+  <script src="js/app.js"></script>
 
-  <script src="js/store.js"></script>
-  <script src="js/reduced-motion.js"></script>
-  <script src="js/router.js"></script>
-  <script src="js/transitions.js"></script>
-  <script src="js/home.js"></script>
-  <script src="js/gallery.js"></script>
-  <script src="js/diary.js"></script>
-  <script src="js/navigation.js"></script>
-  <script src="js/main.js"></script>
+  <!-- Room switching — self-contained, no external dependencies -->
+  <script>
+  (function() {
+    function goToRoom(roomId) {
+      // Hide all rooms
+      var rooms = document.querySelectorAll('.room');
+      for (var i = 0; i < rooms.length; i++) {
+        rooms[i].classList.remove('active');
+        rooms[i].style.display = 'none';
+      }
+      // Show target room
+      var target = document.querySelector('.room[data-room="' + roomId + '"]');
+      if (target) {
+        target.style.display = 'block';
+        target.classList.add('active');
+      }
+      // Update nav buttons
+      var navBtns = document.querySelectorAll('.site-nav__btn');
+      for (var j = 0; j < navBtns.length; j++) {
+        if (navBtns[j].dataset.room === roomId) {
+          navBtns[j].classList.add('active');
+          navBtns[j].setAttribute('aria-current', 'page');
+        } else {
+          navBtns[j].classList.remove('active');
+          navBtns[j].removeAttribute('aria-current');
+        }
+      }
+      // Update URL hash
+      if (roomId !== 'home') {
+        history.pushState({room: roomId}, '', '#' + roomId);
+      } else {
+        history.pushState({room: 'home'}, '', window.location.pathname);
+      }
+    }
+
+    // Click handler for all room buttons
+    document.addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-room]');
+      if (btn && btn.dataset.room) {
+        e.preventDefault();
+        goToRoom(btn.dataset.room);
+      }
+    });
+
+    // Handle hash on page load
+    var hash = window.location.hash.replace('#', '');
+    if (hash && hash !== 'home') {
+      goToRoom(hash);
+    }
+  })();
+  </script>
 </body>
 </html>
