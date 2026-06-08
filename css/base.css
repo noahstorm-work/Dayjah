@@ -66,7 +66,7 @@ body {
   overflow: hidden;
 }
 
-main { overflow: hidden; }
+main { overflow: visible; }
 
 img {
   display: block;
@@ -127,4 +127,55 @@ button {
 h1:focus-visible, h2:focus-visible, h3:focus-visible {
   outline: 2px solid var(--c-stone);
   outline-offset: 2px;
+}
+
+/* ---- Custom Scrollbar ---- */
+.room {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+.room::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+
+.room::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+.room::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+
+.room::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Firefox: hide scrollbar until hover */
+@supports (scrollbar-width: thin) {
+  .room {
+    scrollbar-color: transparent transparent;
+    transition: scrollbar-color 0.3s ease;
+  }
+  .room:hover {
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+}
+
+/* WebKit: hide scrollbar until hover */
+@media (hover: hover) {
+  .room::-webkit-scrollbar-thumb {
+    background: transparent;
+    transition: background 0.3s ease;
+  }
+  .room:hover::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+  }
+  .room::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .room:hover::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
 }

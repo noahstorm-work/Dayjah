@@ -78,6 +78,12 @@
 
   /* ---- Texture ---- */
   --texture-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  /* ---- Scrollbar ---- */
+  --scrollbar-width: 6px;
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: var(--c-border);
+  --scrollbar-thumb-hover: var(--c-stone);
 }
 @font-face {
   font-family: 'Playfair Display';
@@ -147,7 +153,7 @@ body {
   overflow: hidden;
 }
 
-main { overflow: hidden; }
+main { overflow: visible; }
 
 img {
   display: block;
@@ -209,6 +215,57 @@ h1:focus-visible, h2:focus-visible, h3:focus-visible {
   outline: 2px solid var(--c-stone);
   outline-offset: 2px;
 }
+
+/* ---- Custom Scrollbar ---- */
+.room {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+.room::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+
+.room::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+.room::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+
+.room::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Firefox: hide scrollbar until hover */
+@supports (scrollbar-width: thin) {
+  .room {
+    scrollbar-color: transparent transparent;
+    transition: scrollbar-color 0.3s ease;
+  }
+  .room:hover {
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+}
+
+/* WebKit: hide scrollbar until hover */
+@media (hover: hover) {
+  .room::-webkit-scrollbar-thumb {
+    background: transparent;
+    transition: background 0.3s ease;
+  }
+  .room:hover::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+  }
+  .room::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .room:hover::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+}
 .site-nav {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: var(--z-nav);
@@ -241,6 +298,9 @@ h1:focus-visible, h2:focus-visible, h3:focus-visible {
 }
 .room.active { z-index: calc(var(--z-room) + 2); }
 .room__inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   padding: 60px var(--pad-desktop) var(--space-4xl) var(--pad-desktop);
   max-width: var(--content-max); margin: 0 auto;
 }

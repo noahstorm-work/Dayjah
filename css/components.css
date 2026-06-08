@@ -30,6 +30,9 @@
 }
 .room.active { z-index: calc(var(--z-room) + 2); }
 .room__inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   padding: 60px var(--pad-desktop) var(--space-4xl) var(--pad-desktop);
   max-width: var(--content-max); margin: 0 auto;
 }
