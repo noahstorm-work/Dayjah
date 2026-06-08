@@ -26,11 +26,10 @@ test.describe('Accessibility', () => {
 
   test('should have proper heading hierarchy', async ({ page }) => {
     await page.goto('/');
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(3000);
     await expect(page.locator('h1')).toHaveText('DAYJAH');
-    // Navigate to gallery and check h2
     await page.locator('.site-nav__btn[data-room="gallery"]').click();
-    await page.waitForTimeout(300);
+    await page.locator('section[data-room="gallery"]').waitFor({ state: 'visible', timeout: 15000 });
     await expect(page.locator('section[data-room="gallery"] h2')).toContainText('Gallery');
   });
 
