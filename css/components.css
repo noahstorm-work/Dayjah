@@ -32,6 +32,7 @@
 .room__inner {
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
   padding: 60px var(--pad-desktop) var(--space-4xl) var(--pad-desktop);
   max-width: var(--content-max); margin: 0 auto;

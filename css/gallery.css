@@ -4,6 +4,10 @@
 
 .gallery-header {
   margin-bottom: var(--space-4xl);
+  text-align: center;
+  max-width: var(--reading-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .gallery-header__title {
@@ -21,21 +25,25 @@
   color: var(--c-secondary);
   max-width: 480px;
   line-height: var(--lh-loose);
+  margin: 0 auto;
 }
 
 .gallery-header__note {
   font-family: var(--font-body);
   font-size: var(--fs-sm);
   color: var(--c-stone);
-  max-width: 520px;
+  max-width: 480px;
   line-height: var(--lh-reading);
   margin-top: var(--space-lg);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-xl);
+  width: 100%;
 }
 
 .gallery-item {
