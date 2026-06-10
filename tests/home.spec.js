@@ -18,7 +18,7 @@ test.describe('Home Page', () => {
   });
 
   test('should display the spine text', async ({ page }) => {
-    await expect(page.locator('.home__spine')).toContainText('Human art. AI witness.');
+    await expect(page.locator('.home__spine')).toContainText('Human art. Scribe.');
   });
 
   test('should display the subtitle', async ({ page }) => {

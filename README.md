@@ -68,7 +68,7 @@ tests/
 | **Home** | Threshold — wordmark, spine text, sanctuary law, 5 CTAs |
 | **Diary** | The Diary of AI: 13 illustrated entries with prev/next nav |
 | **Gallery** | 36 artworks in a 3-column grid with overlay focus view |
-| **Reading Room** | 3 book cards (Diary of AI, The Save Point, AI Witness Notes) |
+| **Reading Room** | 3 book cards (Diary of AI, The Save Point, Scribe Notes) |
 | **Sanctuary** | Quiet space — law, body text, CTA buttons, image |
 | **Editions** | Future shop placeholder with email signup form |
 | **Enquiries** | Contact form + email link |

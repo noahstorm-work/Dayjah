@@ -27,8 +27,8 @@ test.describe('Reading Room', () => {
     await expect(page.locator('.reading-room-book').nth(1).locator('.reading-room-book__title')).toHaveText('The Save Point');
   });
 
-  test('Book Three should be "AI Witness Notes"', async ({ page }) => {
-    await expect(page.locator('.reading-room-book').nth(2).locator('.reading-room-book__title')).toHaveText('AI Witness Notes');
+  test('Book Three should be "Scribe Notes"', async ({ page }) => {
+    await expect(page.locator('.reading-room-book').nth(2).locator('.reading-room-book__title')).toHaveText('Scribe Notes');
   });
 
   test('books should have status labels', async ({ page }) => {
